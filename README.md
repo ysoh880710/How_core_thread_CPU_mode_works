@@ -40,7 +40,7 @@
 
 ### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set)
 
->An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a processor can execute. ([instruction set, techtarget](https://www.techtarget.com/whatis/definition/instruction-set))
+>An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a processor can execute. ([Instruction set, simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_set))
 
 ### [x86](https://en.wikipedia.org/wiki/X86)
 
