@@ -1,30 +1,36 @@
 # How core, thread, CPU mode works
 
-## [Multi-core](https://en.wikipedia.org/wiki/Multi-core_processor), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), core
-
 ![CPU_core_thread](https://www.logicbig.com/quick-info/images/multithreading.png)
 
-### [Multi-core](https://en.wikipedia.org/wiki/Multi-core_processor)
-
->A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer processor on a single integrated circuit with two or more separate [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit), called cores, each of which reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)). ([Multi-core processor, wikipedia](https://en.wikipedia.org/wiki/Multi-core_processor))
-
->More reference about [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) : [Core Processor, ScienceDirect](https://www.sciencedirect.com/topics/computer-science/core-processor)
-
->Reference about multiple [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) : [Multiple CPU Vs. Multi-Core, chron](https://smallbusiness.chron.com/jpegs-hp-thin-client-42782.html)
+## [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [Multi-core CPU](https://en.wikipedia.org/wiki/Multi-core_processor), core
 
 ### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)
+
+![CPU](https://media.geeksforgeeks.org/wp-content/uploads/20210605182444/CPUblock-660x495.jpg)
 
 >A [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is an electronic circuit inside the computer that carries out [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) to perform arithmetic, logical, control and input/output operations. ([Difference Between CPU and Core, pediaa.com](https://pediaa.com/difference-between-cpu-and-core/))
 
 >More reference about [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) : [Central processing unit, wikipedia](https://en.wikipedia.org/wiki/Central_processing_unit)
 
+### [Multi-core CPU](https://en.wikipedia.org/wiki/Multi-core_processor)
+
+![Multi-core CPU](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/CPU.png)
+
+>A [multi-core CPU](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer processor on a single integrated circuit with two or more separate cores, each of which reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)). ([Multi-core processor, wikipedia](https://en.wikipedia.org/wiki/Multi-core_processor))
+
+>More reference about [multi-core CPU](https://en.wikipedia.org/wiki/Multi-core_processor) : [Multi-core processor, simple wikipedia](https://simple.wikipedia.org/wiki/Multi-core_processor)
+
 ### Core
+
+![Core](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/Core-2.png)
 
 >A Core is an execution unit inside the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that receives and executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)). ([Difference Between CPU and Core, pediaa.com](https://pediaa.com/difference-between-cpu-and-core/))
 
 ### Difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core
 
->[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is responsible for controlling the cores. ([Differences Between Core and CPU, baeldung](https://www.baeldung.com/cs/core-vs-cpu))
+![Differences Between Core and CPU](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-c7135cdceb9b5a510d176ca7da28eb6a_l3.svg)
+
+>While cores actually process [tasks](https://en.wikipedia.org/wiki/Task_(computing)), a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is responsible for controlling the cores. ([Differences Between Core and CPU, baeldung](https://www.baeldung.com/cs/core-vs-cpu))
 
 >More reference about difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core : [Difference between core and processor, stackoverflow](https://stackoverflow.com/questions/19225859/difference-between-core-and-processor)
 
