@@ -28,31 +28,31 @@
 
 >More reference about difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core : [Difference between core and processor, stackoverflow](https://stackoverflow.com/questions/19225859/difference-between-core-and-processor)
 
-## [Instruction set](https://www.techtarget.com/whatis/definition/instruction-set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64), [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
+## [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64), [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
 
-- Every processor or processor family has its own [instruction set](https://www.techtarget.com/whatis/definition/instruction-set). ([Machine code, wikipedia](https://en.wikipedia.org/wiki/Machine_code))
+- Every processor or processor family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Machine code, wikipedia](https://en.wikipedia.org/wiki/Machine_code))
 
-- There are many [instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
+- There are many [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
 
 - I will pick [x86](https://en.wikipedia.org/wiki/X86), precisely [x86-64](https://en.wikipedia.org/wiki/X86-64), for my explanation.
 
 - If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).
 
-### [Instruction set](https://www.techtarget.com/whatis/definition/instruction-set)
+### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set)
 
->An [instruction set](https://www.techtarget.com/whatis/definition/instruction-set) is a group of commands for a [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit) in machine language. ([instruction set, techtarget](https://www.techtarget.com/whatis/definition/instruction-set))
+>An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a processor can execute. ([instruction set, techtarget](https://www.techtarget.com/whatis/definition/instruction-set))
 
 ### [x86](https://en.wikipedia.org/wiki/X86)
 
->[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://www.techtarget.com/whatis/definition/instruction-set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant. ([x86, wikipedia](https://en.wikipedia.org/wiki/X86))
+>[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant. ([x86, wikipedia](https://en.wikipedia.org/wiki/X86))
 
 ### [x86-64](https://en.wikipedia.org/wiki/X86-64)
 
->[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://www.techtarget.com/whatis/definition/instruction-set). ([x86-64, wikipedia](https://en.wikipedia.org/wiki/X86-64))
+>[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([x86-64, wikipedia](https://en.wikipedia.org/wiki/X86-64))
 
 ### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
 
->An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a processor defined by the processor [instruction set](https://en.wikipedia.org/wiki/Instruction_set_architecture). ([Instruction (computer science), simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_(computer_science)))
+>An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a processor defined by the processor [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Instruction (computer science), simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_(computer_science)))
 
 ## [Thread](https://en.wikipedia.org/wiki/Thread_(computing)), [operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
 
