@@ -60,13 +60,9 @@
 
 >An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a processor defined by the processor [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Instruction (computer science), simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_(computer_science)))
 
-## [Thread](https://en.wikipedia.org/wiki/Thread_(computing)), [operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
+## [Process](https://en.wikipedia.org/wiki/Process_(computing)), [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
 
-An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) program which determines how much time each process spends executing, and in which order execution control should be passed to programs.
-
-There are many [operating systems](https://en.wikipedia.org/wiki/Operating_system). ([List of operating systems](https://en.wikipedia.org/wiki/List_of_operating_systems))
-
-I will pick [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) for my explanation.
+### [Process](https://en.wikipedia.org/wiki/Process_(computing))
 
 ### [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
 
@@ -75,6 +71,20 @@ I will pick [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) for my ex
 >[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) in [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) is the basic unit to which an operating system allocates processor time. ([Threads and threading, microsoft docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/threads-and-threading))
 
 >More reference about [thread](https://en.wikipedia.org/wiki/Thread_(computing)) : [Thread (computing), wikipedia](https://en.wikipedia.org/wiki/Thread_(computing))
+
+### Difference between [Process](https://en.wikipedia.org/wiki/Process_(computing)) and [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
+
+## [Operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), [Preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
+
+![Scheduling](http://beyondthegeek.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-29-at-12.39.17-AM-500x484.png)
+
+- An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) program which determines how much time each process spends executing, and in which order execution control should be passed to programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system#Multitasking))
+
+- There are many [operating systems](https://en.wikipedia.org/wiki/Operating_system). ([List of operating systems](https://en.wikipedia.org/wiki/List_of_operating_systems))
+
+- I will pick [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) for my explanation.
+
+- Microsoft Windows supports preemptive multitasking, which creates the effect of simultaneous execution of multiple threads from multiple processes. ([About Processes and Threads](https://docs.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads))
 
 ### [Operating system](https://en.wikipedia.org/wiki/Operating_system)
 
