@@ -1,8 +1,6 @@
-# How core, thread, CPU mode works
+# How core, [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) works
 
-![CPU_core_thread](https://www.logicbig.com/quick-info/images/multithreading.png)
-
-## [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [Multi-core CPU](https://en.wikipedia.org/wiki/Multi-core_processor), core
+## What are [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [multi-core CPU](https://en.wikipedia.org/wiki/Multi-core_processor), core, and what they do?
 
 ### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)
 
@@ -34,19 +32,23 @@
 
 >More reference about difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core : [Difference between core and processor, stackoverflow](https://stackoverflow.com/questions/19225859/difference-between-core-and-processor)
 
-## [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64), [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
+## What are [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64)?
 
-- Every processor or processor family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Machine code, wikipedia](https://en.wikipedia.org/wiki/Machine_code))
+### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
 
-- There are many [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
-
-- I will pick [x86](https://en.wikipedia.org/wiki/X86), precisely [x86-64](https://en.wikipedia.org/wiki/X86-64), for my explanation.
-
-- If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).
+>An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a processor defined by the processor [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Instruction (computer science), simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_(computer_science)))
 
 ### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set)
 
 >An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a processor can execute. ([Instruction set, simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_set))
+
+#### Every processor or processor family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Machine code, wikipedia](https://en.wikipedia.org/wiki/Machine_code))
+
+#### There are many [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
+
+#### I will pick [x86](https://en.wikipedia.org/wiki/X86), precisely [x86-64](https://en.wikipedia.org/wiki/X86-64), for my explanation.
+
+#### If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).
 
 ### [x86](https://en.wikipedia.org/wiki/X86)
 
@@ -56,9 +58,51 @@
 
 >[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([x86-64, wikipedia](https://en.wikipedia.org/wiki/X86-64))
 
-### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Kernel_(operating_system)) program which determines how much time each [process]() spends executing, and in which order execution control should be passed to programs.
 
->An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a processor defined by the processor [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Instruction (computer science), simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_(computer_science)))
+## What are [operating system](https://en.wikipedia.org/wiki/Operating_system), [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
+
+### [Operating system](https://en.wikipedia.org/wiki/Operating_system)
+
+![operating_system](https://www.tutorialspoint.com/operating_system/images/conceptual_view.jpg)
+
+>An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system software that manages [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system))
+
+### [Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)
+
+>[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) includes the physical parts of a computer, such as the case, [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), random access memory (RAM), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.
+
+### [Kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))
+
+![kernel](https://miro.medium.com/max/1400/1*iuW845pwRhd49KEUYvzsmg.png)
+
+>The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a computer's [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system. ([Kernel (operating system), wikipedia](https://en.wikipedia.org/wiki/Kernel_(operating_system)))
+
+### [Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
+
+>[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is the action of assigning resources to perform [tasks](https://en.wikipedia.org/wiki/Task_(computing)). The resources may be [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), network links or expansion cards. The [tasks](https://en.wikipedia.org/wiki/Task_(computing)) may be [threads](https://en.wikipedia.org/wiki/Thread_(computing)), [processes](https://en.wikipedia.org/wiki/Process_(computing)) or data flows. ([Scheduling (computing), wikipedia](https://en.wikipedia.org/wiki/Scheduling_(computing)))
+
+#### An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) program which determines how much time each [process](https://en.wikipedia.org/wiki/Process_(computing)) spends executing, and in which order execution control should be passed to programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system#Multitasking))
+
+#### There are many types of [operating systems](https://en.wikipedia.org/wiki/Operating_system). ([Types of operating systems](https://en.wikipedia.org/wiki/Operating_system#Types_of_operating_systems))
+
+#### I will pick [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), precisely [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking), for my explanation.
+
+#### If your [operating system](https://en.wikipedia.org/wiki/Operating_system) is [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows), it belongs to [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system).
+
+## What are [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking)?
+
+### [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking)
+
+![multitasking](https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png)
+
+>[Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple [tasks](https://en.wikipedia.org/wiki/Task_(computing)) (also known as processes) over a certain period of time. ([Computer multitasking, wikipedia](https://en.wikipedia.org/wiki/Computer_multitasking))
+
+>[Multitasking](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking) in [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) allocates a processor [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) to each [thread](https://en.wikipedia.org/wiki/Thread_(computing)) it executes. ([Multitasking, microsoft docs](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking))
+
+### [Preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking)
+
+>The term [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) is used to distinguish a multitasking operating system, which permits preemption of tasks, from a cooperative multitasking system wherein processes or tasks must be explicitly programmed to yield when they do not need system resources.
 
 ## [Process](https://en.wikipedia.org/wiki/Process_(computing)), [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
 
@@ -86,18 +130,6 @@
 
 - Microsoft Windows supports preemptive multitasking, which creates the effect of simultaneous execution of multiple threads from multiple processes. ([About Processes and Threads](https://docs.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads))
 
-### [Operating system](https://en.wikipedia.org/wiki/Operating_system)
-
->An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system software that manages computer hardware, software resources, and provides common services for computer programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system))
-
-### [Kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))
-
->The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a computer's [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system. ([Kernel (operating system), wikipedia](https://en.wikipedia.org/wiki/Kernel_(operating_system)))
-
-### [Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
-
->[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is the action of assigning resources to perform tasks. The resources may be [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), network links or expansion cards. The tasks may be [threads](), processes or data flows. ([Scheduling (computing), wikipedia](https://en.wikipedia.org/wiki/Scheduling_(computing)))
-
 ## [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), [task](https://en.wikipedia.org/wiki/Task_(computing)), [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)
 
 The concept of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) makes it possible to have computer [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) with a single [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit).
@@ -107,12 +139,6 @@ Most modern [operating systems](https://en.wikipedia.org/wiki/Operating_system) 
 [Preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) allocates a processor [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) to each [thread](https://en.wikipedia.org/wiki/Thread_(computing)) it executes. ([Multitasking, ](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking))
 
 If your [operating systems](https://en.wikipedia.org/wiki/Operating_system) is [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows), it belongs [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking).
-
-### [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking)
-
->[Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple [tasks](https://en.wikipedia.org/wiki/Task_(computing)) (also known as processes) over a certain period of time. ([Computer multitasking, wikipedia](https://en.wikipedia.org/wiki/Computer_multitasking))
-
->[Multitasking](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking) in [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) allocates a processor [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) to each [thread](https://en.wikipedia.org/wiki/Thread_(computing)) it executes. ([Multitasking, microsoft docs](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking))
 
 ### [Task](https://en.wikipedia.org/wiki/Task_(computing))
 
@@ -167,5 +193,7 @@ The execution flow in core from timer interrupt is as follows.
 ### [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
 
 >[CPU modes](https://en.wikipedia.org/wiki/CPU_modes) (also called processor modes, CPU states, CPU privilege levels and other names) are operating modes for the [central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) of some computer architectures that place restrictions on the type and scope of operations that can be performed by certain processes being run by the CPU. ([CPU modes, wikipedia](https://en.wikipedia.org/wiki/CPU_modes))
+
+![CPU_core_thread](https://www.logicbig.com/quick-info/images/multithreading.png)
 
 # Organized by ysoh880710
