@@ -9,7 +9,7 @@
 ![Computer hardware](https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/176067216_1813918015455920_2474979289003788370_n.jpg?stp=cp0_dst-jpg_e15_q65_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=110474&_nc_ohc=H8i6zv687LUAX9p3zZu&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-8th1QddD70eFq1w9WqrgTgDP9ZnV0LlovbidhYv_bA&oe=62B83238)
 
 >[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) includes the physical parts of a computer, such as the case, **[central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)**, random access memory (RAM), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.
-><div align="right">https://en.wikipedia.org/wiki/Computer_hardware)</div>
+><div align="right">https://en.wikipedia.org/wiki/Computer_hardware</div>
 
 ### [Integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit)
 
@@ -69,21 +69,28 @@
 
 ### Summary
 
-#### **A [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) that executes arithmetic, logic, controlling, and input/output (I/O) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**.
+#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware).
 
-#### A [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a [microprocessor](https://en.wikipedia.org/wiki/Microprocessor) chip with multiple [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit), called **cores**.
+#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
+
+#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes arithmetic, logic, controlling, and input/output (I/O) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
+
+#### [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one core, which is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 
 ## What are [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64)?
 
 ### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
 
->An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a processor defined by the processor [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Instruction (computer science), simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_(computer_science)))
+>An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) defined by the [processor](https://en.wikipedia.org/wiki/Processor_(computing)) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
+><div align="right">https://simple.wikipedia.org/wiki/Instruction_(computer_science)</div>
 
 ### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set)
 
->An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a processor can execute. ([Instruction set, simple wikipedia](https://simple.wikipedia.org/wiki/Instruction_set))
+>An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can execute.
+><div align="right">https://simple.wikipedia.org/wiki/Instruction_set</div>
 
-#### Every processor or processor family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([Machine code, wikipedia](https://en.wikipedia.org/wiki/Machine_code))
+#### Every [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or [processor](https://en.wikipedia.org/wiki/Processor_(computing)) family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
+<div align="right">https://en.wikipedia.org/wiki/Machine_code</div>
 
 #### There are many [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
 
@@ -93,11 +100,21 @@
 
 ### [x86](https://en.wikipedia.org/wiki/X86)
 
->[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant. ([x86, wikipedia](https://en.wikipedia.org/wiki/X86))
+>[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant.
+><div align="right">https://en.wikipedia.org/wiki/X86</div>
 
 ### [x86-64](https://en.wikipedia.org/wiki/X86-64)
 
->[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set). ([x86-64, wikipedia](https://en.wikipedia.org/wiki/X86-64))
+>[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
+><div align="right">https://en.wikipedia.org/wiki/X86-64</div>
+
+### Summary
+
+#### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
+
+#### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
+
+#### [x86](https://en.wikipedia.org/wiki/X86) and [x86-64](https://en.wikipedia.org/wiki/X86-64) are examples of [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
 
 >An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Kernel_(operating_system)) program which determines how much time each [process]() spends executing, and in which order execution control should be passed to programs.
 
