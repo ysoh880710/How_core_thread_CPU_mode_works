@@ -1,60 +1,71 @@
 # How core, [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) works
 
-#### I will explain in **[bottom up](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order**, because top down order was more difficult to avoid mentioning other topics. I felt mentioning more topics is eventually making more difficult to understand.
+#### I will explain in **[bottom up](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order**, because [top down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order was more difficult to avoid mentioning other topics. I felt mentioning more topics is eventually making more difficult to understand.
 
-## What are [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit), [processor](https://en.wikipedia.org/wiki/Processor_(computing)), [microprocessor](https://en.wikipedia.org/wiki/Microprocessor), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor), core?
+## What are [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit), [processor](https://en.wikipedia.org/wiki/Processor_(computing)), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor), core?
 
 ### [Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)
 
 ![Computer hardware](https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/176067216_1813918015455920_2474979289003788370_n.jpg?stp=cp0_dst-jpg_e15_q65_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=110474&_nc_ohc=H8i6zv687LUAX9p3zZu&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-8th1QddD70eFq1w9WqrgTgDP9ZnV0LlovbidhYv_bA&oe=62B83238)
 
->[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) includes the physical parts of a computer, such as the case, **[central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)**, random access memory (RAM), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard. ([Computer hardware, wikipedia](https://en.wikipedia.org/wiki/Computer_hardware))
+>[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) includes the physical parts of a computer, such as the case, **[central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)**, random access memory (RAM), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.
+><div align="right">https://en.wikipedia.org/wiki/Computer_hardware)</div>
 
 ### [Integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit)
 
-![Integrated circuit](https://upload.wikimedia.org/wikipedia/commons/5/5c/Microchips.jpg)
-
->An [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) or monolithic [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) (also referred to as an IC, a chip, or a microchip) is a set of electronic circuits on one small flat piece (or "chip") of semiconductor material, usually silicon. ([Integrated circuit, wikipedia](https://en.wikipedia.org/wiki/Integrated_circuit))
+>An [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) or monolithic [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) (also referred to as an IC, a chip, or a microchip) is a set of electronic circuits on one small flat piece (or "chip") of semiconductor material, usually silicon.
+><div align="right">https://en.wikipedia.org/wiki/Integrated_circuit</div>
 
 ### [Processor](https://en.wikipedia.org/wiki/Processor_(computing))
 
->A [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or processing unit is an electrical component (digital circuit) that performs operations on an external data source, usually memory or some other data stream. ([Processor, wikipedia](https://en.wikipedia.org/wiki/Processor_(computing)))
-
-### [Microprocessor](https://en.wikipedia.org/wiki/Microprocessor)
-
-![microprocessor](https://upload.wikimedia.org/wikipedia/commons/b/b9/C4004_two_lines.jpg)
-
->A [microprocessor](https://en.wikipedia.org/wiki/Microprocessor) is a computer [processor](https://en.wikipedia.org/wiki/Processor_(computing)) where the data processing logic and control is included on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit), or a small number of [integrated circuits](https://en.wikipedia.org/wiki/Integrated_circuit). ([Microprocessor, wikipedia](https://en.wikipedia.org/wiki/Microprocessor))
+>A [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or processing unit is an electrical component (digital circuit) that performs operations on an external data source, usually memory or some other data stream.
+><div align="right">https://en.wikipedia.org/wiki/Processor_(computing)</div>
 
 ### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)
 
-![CPU](https://media.geeksforgeeks.org/wp-content/uploads/20210605182444/CPUblock-660x495.jpg)
+|![Intel](https://assets.hardwarezone.com/img/2021/11/Corei9_02.jpg)|![AMD](https://cdn.mos.cms.futurecdn.net/mnzNfoMcmVXme8vxENcyjm-970-80.jpg)|
+|---|---|
+|<div align="center">Intel i9 12900K</div>|<div align="center">AMD Ryzen 9 5950X</div>|
 
->A [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), also called a central [processor](https://en.wikipedia.org/wiki/Processor_(computing)), main [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or just [processor](https://en.wikipedia.org/wiki/Processor_(computing)), is the electronic circuitry that **executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** comprising a computer program. The **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions** in the program. ([Central processing unit, wikipedia](https://en.wikipedia.org/wiki/Central_processing_unit))
+>A [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), also called a central [processor](https://en.wikipedia.org/wiki/Processor_(computing)), main [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or just [processor](https://en.wikipedia.org/wiki/Processor_(computing)), is the electronic circuitry that **executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** comprising a computer program. The **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions** in the program.
+><div align="right">https://en.wikipedia.org/wiki/Central_processing_unit</div>
 
 ### [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)
 
-![Multi-core processor](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/CPU.png)
+>A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer [processor](https://en.wikipedia.org/wiki/Processor_(computing)) on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) with two or more separate processing units, called **cores**, **each of which reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**.
+><div align="right">https://en.wikipedia.org/wiki/Multi-core_processor</div>
 
->A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer [processor](https://en.wikipedia.org/wiki/Processor_(computing)) on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) with two or more separate processing units, called **cores**, **each of which reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**. ([Multi-core processor, wikipedia](https://en.wikipedia.org/wiki/Multi-core_processor))
-
->**[Microprocessor](https://en.wikipedia.org/wiki/Microprocessor) chips with multiple [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit) are [multi-core processors](https://en.wikipedia.org/wiki/Multi-core_processor)**. ([Central processing unit, wikipedia](https://en.wikipedia.org/wiki/Central_processing_unit))
-
->More reference about [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) : [Multi-core processor, simple wikipedia](https://simple.wikipedia.org/wiki/Multi-core_processor)
+>A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is **a single [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one microprocessor core**.
+><div align="right">https://en.wikipedia.org/wiki/Microprocessor</div>
 
 ### Core
 
-![Core](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/Core-2.png)
-
->A core is **an execution unit inside the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that receives and executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**. ([Difference Between CPU and Core, pediaa.com](https://pediaa.com/difference-between-cpu-and-core/))
+>A core is **an execution unit inside the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that receives and executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**.
+><div align="right">https://pediaa.com/difference-between-cpu-and-core</div>
 
 ### Difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core
 
+|<div align="center">![CPU diagram](https://media.geeksforgeeks.org/wp-content/uploads/20210605182444/CPUblock-660x495.jpg)</div>|<div align="center">![Multi-core CPU diagram](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/CPU.png)</div>|
+|---|---|
+|<div align="center">CPU diagram</div>|<div align="center">Multi-core CPU diagram</div>|
+|<div align="center">![Core diagram 1](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/Core-2.png)</div>|<div align="center">![Core diagram 2](https://ars.els-cdn.com/content/image/3-s2.0-B9780128014134000118-f11-15-9780128014134.jpg)</div>|
+|<div align="center">Core diagram 1</div>|<div align="center">Core diagram 2</div>|
+
+#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different. (Compare multi-core CPU diagram and Core diagram 1)
+
 ![Differences Between Core and CPU](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-c7135cdceb9b5a510d176ca7da28eb6a_l3.svg)
 
->**While cores actually process [tasks](https://en.wikipedia.org/wiki/Task_(computing)), a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is responsible for controlling the cores**. ([Differences Between Core and CPU, baeldung](https://www.baeldung.com/cs/core-vs-cpu))
+>**While cores actually process [tasks](https://en.wikipedia.org/wiki/Task_(computing)), a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is responsible for controlling the cores**.
+><div align="right">https://www.baeldung.com/cs/core-vs-cpu</div>
+
+#### Core is [CPU](https://en.wikipedia.org/wiki/Central_processing_unit). (Compare CPU diagram, Core diagram 1, and Core diagram 2)
+
+>**A core is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [processor](https://en.wikipedia.org/wiki/Processor_(computing)) built into a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) socket.**
+><div align="right">https://www.sciencedirect.com/topics/computer-science/core-processor</div>
 
 >More reference about difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core : [Difference between core and processor, stackoverflow](https://stackoverflow.com/questions/19225859/difference-between-core-and-processor)
+
+#### In conclusion, [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different from perspective of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) meaning [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor). [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are same from perspective of definition and components of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 
 ### Summary
 
