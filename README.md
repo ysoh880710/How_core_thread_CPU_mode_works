@@ -11,6 +11,9 @@
 >[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) includes the physical parts of a computer, such as the case, **[central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)**, random access memory (RAM), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.
 ><div align="right">https://en.wikipedia.org/wiki/Computer_hardware</div>
 
+>[Hardware](https://en.wikipedia.org/wiki/Computer_hardware) is typically directed by the software to execute any command or [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
+><div align="right">https://en.wikipedia.org/wiki/Computer_hardware</div>
+
 ### [Integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit)
 
 >An [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) or monolithic [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) (also referred to as an IC, a chip, or a microchip) is a set of electronic circuits on one small flat piece (or "chip") of semiconductor material, usually silicon.
@@ -21,21 +24,24 @@
 >A [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or processing unit is an electrical component (digital circuit) that performs operations on an external data source, usually memory or some other data stream.
 ><div align="right">https://en.wikipedia.org/wiki/Processor_(computing)</div>
 
+>The term is frequently used to refer to the [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit) in a system. However, it can also refer to other coprocessors, such as a graphics processing unit (GPU).
+><div align="right">https://en.wikipedia.org/wiki/Processor_(computing)</div>
+
 ### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)
 
 |![Intel](https://assets.hardwarezone.com/img/2021/11/Corei9_02.jpg)|![AMD](https://cdn.mos.cms.futurecdn.net/mnzNfoMcmVXme8vxENcyjm-970-80.jpg)|
 |---|---|
 |<div align="center">Intel i9 12900K</div>|<div align="center">AMD Ryzen 9 5950X</div>|
 
->A [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), also called a central [processor](https://en.wikipedia.org/wiki/Processor_(computing)), main [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or just [processor](https://en.wikipedia.org/wiki/Processor_(computing)), is the electronic circuitry that **executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** comprising a computer program. The **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions** in the program.
+>A [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), also called a central [processor](https://en.wikipedia.org/wiki/Processor_(computing)), main [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or just [processor](https://en.wikipedia.org/wiki/Processor_(computing)), is the electronic circuitry that **executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** comprising a computer program. The [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) performs basic **arithmetic, logic, controlling, and input/output (I/O) operations specified by the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** in the program.
 ><div align="right">https://en.wikipedia.org/wiki/Central_processing_unit</div>
 
 ### [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)
 
->A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer [processor](https://en.wikipedia.org/wiki/Processor_(computing)) on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) with two or more separate processing units, called **cores**, **each of which reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**.
+>A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer **[processor](https://en.wikipedia.org/wiki/Processor_(computing))** on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) with two or more separate processing units, called **cores**, each of which **reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**. The **[instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are ordinary [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** (such as add, move data, and branch) but the single [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can run [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) on separate cores at the same time, increasing overall speed for programs that support multithreading or other parallel computing techniques.
 ><div align="right">https://en.wikipedia.org/wiki/Multi-core_processor</div>
 
->A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is **a single [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one microprocessor core**.
+>A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is **a single [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)** that contains more than one microprocessor core.
 ><div align="right">https://en.wikipedia.org/wiki/Microprocessor</div>
 
 ### Core
@@ -69,15 +75,15 @@
 
 ### Summary
 
-#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware).
+#### - [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware).
 
-#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
+#### - [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
 
-#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes arithmetic, logic, controlling, and input/output (I/O) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
+#### - [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes arithmetic, logic, controlling, and input/output (I/O) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
 
-#### [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one core, which is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+#### - [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one core, which is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executing [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
 
-## What are [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64)?
+## What are [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), [instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64), [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
 
 ### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
 
@@ -94,9 +100,7 @@
 
 #### There are many [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
 
-#### I will pick [x86](https://en.wikipedia.org/wiki/X86), precisely [x86-64](https://en.wikipedia.org/wiki/X86-64), for my explanation.
-
-#### If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).
+#### [x86](https://en.wikipedia.org/wiki/X86) and [x86-64](https://en.wikipedia.org/wiki/X86-64) are examples of [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set).
 
 ### [x86](https://en.wikipedia.org/wiki/X86)
 
@@ -108,6 +112,14 @@
 >[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
 ><div align="right">https://en.wikipedia.org/wiki/X86-64</div>
 
+#### If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).
+
+### [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
+
+![Thread](https://upload.wikimedia.org/wikipedia/commons/a/a5/Multithreaded_process.svg)
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) of execution is **the smallest sequence of programmed [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** that can be managed independently by a **scheduler**, which is typically a part of the **[operating system](https://en.wikipedia.org/wiki/Operating_system)**.
+
 ### Summary
 
 #### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
@@ -116,15 +128,17 @@
 
 #### [x86](https://en.wikipedia.org/wiki/X86) and [x86-64](https://en.wikipedia.org/wiki/X86-64) are examples of [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
 
->An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Kernel_(operating_system)) program which determines how much time each [process]() spends executing, and in which order execution control should be passed to programs.
+#### [Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the smallest sequence of programmed [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that can be managed independently by a **scheduler**, which is typically a part of the **[operating system](https://en.wikipedia.org/wiki/Operating_system)**.
 
-## What are [operating system](https://en.wikipedia.org/wiki/Operating_system), [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
+## What are scheduler, [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
 ### [Operating system](https://en.wikipedia.org/wiki/Operating_system)
 
 ![operating_system](https://www.tutorialspoint.com/operating_system/images/conceptual_view.jpg)
 
 >An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system software that manages [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system))
+
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Kernel_(operating_system)) program which determines how much time each [process]() spends executing, and in which order execution control should be passed to programs.
 
 ### [Kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))
 
