@@ -2,6 +2,155 @@
 
 #### I will explain in **[bottom up](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order**, because [top down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order was more difficult to avoid mentioning other topics. I felt mentioning more topics is eventually making more difficult to understand.
 
+#### Understanding of [operating system](https://en.wikipedia.org/wiki/Operating_system) is inevitable. So I will begin with a brief explanation of [operating system](https://en.wikipedia.org/wiki/Operating_system).
+
+## What is [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Operating_system_placement.svg/165px-Operating_system_placement.svg.png">
+</p>
+
+>An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system **[software](https://en.wikipedia.org/wiki/Software) that manages computer [hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs**.
+><div align="right">https://en.wikipedia.org/wiki/Operating_system</div>
+
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) is **[software](https://en.wikipedia.org/wiki/Software) that manages a computer’s [hardware](https://en.wikipedia.org/wiki/Computer_hardware)**.
+><div align="right">3p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A more common definition, and the one that we usually follow, is that the [operating system](https://en.wikipedia.org/wiki/Operating_system) is **the one program running at all times on the computer**—usually called the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)).
+><div align="right">6p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a **resource manager**. The system’s CPU, memory space, file-storage space, and I/O devices are among the resources that the operating system must manage.
+><div align="right">27p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+### Summary
+
+**- An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is a [software](https://en.wikipedia.org/wiki/Software) that manages computer [hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs.**
+
+## What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+
+>- Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
+>- Single-user and multi-user
+>- Distributed
+>- Templated
+>- Embedded
+>- Real-time
+>- Library
+><div align="right">https://en.wikipedia.org/wiki/Operating_system#Types_of_operating_systems</div>
+
+>- Batch
+>- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
+>- Distributed
+>- Network
+>- Real-Time
+><div align="right">https://www.geeksforgeeks.org/types-of-operating-systems/</div>
+
+>- Batch
+>- [Multi-Tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
+>- Real time
+>- Distributed
+>- Network
+>- Mobile
+><div align="right">https://www.guru99.com/operating-system-tutorial.html#types-of-operating-system</div>
+
+### Summary
+
+- Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
+- Single-user and multi-user
+- Distributed
+- Templated
+- Embedded
+- Real time
+- Batch
+- Network
+- Mobile
+
+#### I will handle [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system) in this article.
+
+## What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) in [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png">
+</p>
+
+>[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the **[concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks** (also known as processes) over a certain period of time.
+><div align="right">https://en.wikipedia.org/wiki/Computer_multitasking</div>
+
+>[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is an extension of multiprogramming wherein [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) algorithms rapidly switch between [processes](https://en.wikipedia.org/wiki/Process_(computing)), providing users with a fast response time.
+><div align="right">52p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+#### [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) leads to having multiple [processes](https://en.wikipedia.org/wiki/Process_(computing)) in memory at the same time. If several processes are ready to run at the same time, the system must choose which process will run next. Making this decision is [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling).
+<div align="right">24p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+### Summary
+
+**- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks (also known as processes) over a certain period of time.**
+
+#### For more detail about concurrency, read Parallel Computing.
+
+## What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+
+>- Security
+>- Control over system performance
+>- Job accounting
+>- Error detecting aids
+>- Coordination between other software and users
+>- Memory Management
+>- [Processor Management](https://en.wikipedia.org/wiki/Process_management_(computing))
+>- Device Management
+>- File Management
+><div align="right">https://www.geeksforgeeks.org/functions-of-operating-system/</div>
+
+>- [Process management](https://en.wikipedia.org/wiki/Process_management_(computing))
+>- Memory management
+>- File management
+>- Device Management
+>- I/O System Management
+>- Secondary-Storage Management
+>- Security
+>- Command interpretation
+>- Networking
+>- Job accounting
+>- Communication management
+><div align="right">https://www.guru99.com/operating-system-tutorial.html#functions-of-operating-system/</div>
+
+>- [Process Management](https://en.wikipedia.org/wiki/Process_management_(computing))
+>- Memory Management
+>- File-System Management
+>- Mass-Storage Management
+>- Cache Management
+>- I/O System Management
+>- Security and Protection
+>- Virtualization
+><div align="right">27p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+### Summary
+
+- [Process Management](https://en.wikipedia.org/wiki/Process_management_(computing))
+- Memory Management
+- File-System Management
+- Mass-Storage Management
+- Cache Management
+- I/O System Management
+- Security and Protection
+- Virtualization
+
+## Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
+
+>In general,we have **no completely adequate definition of an operating system**.
+><div align="right">5p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>In addition, we have **no universally accepted definition of what is part of the operating system**.
+><div align="right">6p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+## CPU scheduling
+
+CPU - The hardware that executes instructions.
+Processor - Aphysical chip that contains one or more CPUs.
+Core - The basic computation unit of the CPU.
+Multicore - Including multiple computing cores on the same CPU.
+Multiprocessor - Including multiple processors.
+<div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
 ## What are [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit), [processor](https://en.wikipedia.org/wiki/Processor_(computing)), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor), core?
 
 ### [Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)
