@@ -78,14 +78,14 @@
 >[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is an extension of multiprogramming wherein [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) algorithms rapidly switch between [processes](https://en.wikipedia.org/wiki/Process_(computing)), providing users with a fast response time.
 ><div align="right">52p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-#### [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) leads to having multiple [processes](https://en.wikipedia.org/wiki/Process_(computing)) in memory at the same time. If several processes are ready to run at the same time, the system must choose which process will run next. Making this decision is [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling).
-<div align="right">24p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
 ### Summary
 
 **- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks (also known as processes) over a certain period of time.**
 
 #### For more detail about concurrency, read Parallel Computing.
+
+#### [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) leads to having multiple [processes](https://en.wikipedia.org/wiki/Process_(computing)) in memory at the same time. If several processes are ready to run at the same time, the system must choose which process will run next. Making this decision is [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling).
+<div align="right">24p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 ## What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
@@ -134,6 +134,8 @@
 - Security and Protection
 - Virtualization
 
+#### I will handle [Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) in this article.
+
 ## Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
 
 >In general,we have **no completely adequate definition of an operating system**.
@@ -141,6 +143,37 @@
 
 >In addition, we have **no universally accepted definition of what is part of the operating system**.
 ><div align="right">6p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+## What is [Process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
+
+>[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) involves various tasks like creation, scheduling, termination of [processes](https://en.wikipedia.org/wiki/Process_(computing)), and a dead lock.
+><div align="right">https://www.guru99.com/process-management-pcb.html</div>
+
+>The operating system is responsible for the following activities in connection with process management:
+>- Creating and deleting both user and system processes
+>- Scheduling processes and threads on the CPUs
+>- Suspending and resuming processes
+>- Providing mechanisms for process synchronization
+>- Providing mechanisms for process communication
+><div align="right">28p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+### Summary
+
+- [Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is management of process creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, communication.
+
+#### I will handle [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) in this article.
+
+## What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+
+>The [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) selects an available [process](https://en.wikipedia.org/wiki/Process_(computing)) (possibly from a set of several available processes) for program execution on a core.
+><div align="right">110p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>The role of the [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is to select an available [process](https://en.wikipedia.org/wiki/Process_(computing)) to run on a CPU.
+><div align="right">153p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+Scheduling Queues
+CPU Scheduling
+Context Switch
 
 ## CPU scheduling
 
