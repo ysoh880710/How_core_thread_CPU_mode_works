@@ -1,6 +1,8 @@
 # How core, [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) works
 
-#### I will explain in **[bottom up](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order**, because [top down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) order was more difficult to avoid mentioning other topics. I felt mentioning more topics is eventually making more difficult to understand.
+#### I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics meant more difficult to understand to me.
+
+#### I will try to summarize each topic in my word as simple as possible. However, please correct me if it is wrong.
 
 #### Understanding of [operating system](https://en.wikipedia.org/wiki/Operating_system) is inevitable. So I will begin with a brief explanation of [operating system](https://en.wikipedia.org/wiki/Operating_system).
 
@@ -19,12 +21,15 @@
 >A more common definition, and the one that we usually follow, is that the [operating system](https://en.wikipedia.org/wiki/Operating_system) is **the one program running at all times on the computer**—usually called the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)).
 ><div align="right">6p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a **resource manager**. The system’s CPU, memory space, file-storage space, and I/O devices are among the resources that the operating system must manage.
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a **resource manager**. The system’s CPU, memory space, file-storage space, and I/O devices are among the resources that the [operating system](https://en.wikipedia.org/wiki/Operating_system) must manage.
 ><div align="right">27p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>It is **hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is** other than saying it is the **software that runs in kernel mode**—and even that is not always true. Part of the problem is that [operating systems](https://en.wikipedia.org/wiki/Operating_system) perform two essentially unrelated functions: **providing application programmers (and application programs, naturally) a clean abstract set of resources** instead of the messy hardware ones and **managing these hardware resources**. Depending on who is doing the talking, you might hear mostly about one function or the other.
+><div align="right">3p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
 ### Summary
 
-**- An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is a [software](https://en.wikipedia.org/wiki/Software) that manages computer [hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs.**
+**- [Operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is a [software](https://en.wikipedia.org/wiki/Software) that manages [computer](https://en.wikipedia.org/wiki/Computer) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as [hardware](https://en.wikipedia.org/wiki/Computer_hardware) and [software](https://en.wikipedia.org/wiki/Software).**
 
 ## What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
@@ -64,7 +69,7 @@
 - Network
 - Mobile
 
-#### I will handle [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system) in this article.
+#### I will limit to [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system) in this article.
 
 ## What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) in [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
@@ -75,14 +80,16 @@
 >[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the **[concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks** (also known as processes) over a certain period of time.
 ><div align="right">https://en.wikipedia.org/wiki/Computer_multitasking</div>
 
->[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is an extension of multiprogramming wherein [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) algorithms rapidly switch between [processes](https://en.wikipedia.org/wiki/Process_(computing)), providing users with a fast response time.
+>[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is an extension of [multiprogramming](https://en.wikipedia.org/wiki/Computer_multitasking#Multiprogramming) wherein [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) algorithms rapidly switch between [processes](https://en.wikipedia.org/wiki/Process_(computing)), providing users with a fast response time.
 ><div align="right">52p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 ### Summary
 
-**- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks (also known as processes) over a certain period of time.**
+**- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks.**
 
 #### For more detail about concurrency, read Parallel Computing.
+
+## What is [multiprogramming](https://en.wikipedia.org/wiki/Computer_multitasking#Multiprogramming)?
 
 ## What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
@@ -131,15 +138,18 @@
 - Security and Protection
 - Virtualization
 
-#### I will handle [process management](https://en.wikipedia.org/wiki/Process_management_(computing)) in this article.
+#### I will limit to [process management](https://en.wikipedia.org/wiki/Process_management_(computing)) in this article.
 
 ## Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
 
->In general,we have **no completely adequate definition of an [operating system](https://en.wikipedia.org/wiki/Operating_system)**.
+>In general, we have **no completely adequate definition of an [operating system](https://en.wikipedia.org/wiki/Operating_system)**.
 ><div align="right">5p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 >In addition, we have **no universally accepted definition of what is part of the [operating system](https://en.wikipedia.org/wiki/Operating_system)**.
 ><div align="right">6p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>It is **hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is** other than saying it is the **software that runs in kernel mode**—and even that is not always true.
+><div align="right">3p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
 ## What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
 
@@ -158,7 +168,7 @@
 
 - [Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is management of [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, communication.
 
-#### I will handle [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) in this article.
+#### I will limit to [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) in this article.
 
 ## What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
@@ -184,7 +194,7 @@
 >The **[short-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling)** (also known as the **CPU scheduler**) **decides which of the ready, in-memory processes is to be executed (allocated a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit))** after a clock interrupt, an I/O interrupt, an operating system call or another form of signal.
 ><div align="right">[short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling)</div>
 
->As processes enter the system, they are **put into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready)**, where they are ready and waiting to execute on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)’s core.
+>As [processes](https://en.wikipedia.org/wiki/Process_(computing)) enter the system, they are **put into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready)**, where they are ready and waiting to execute on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)’s core.
 ><div align="right">112p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 >[Processes](https://en.wikipedia.org/wiki/Process_(computing)) that are waiting for a certain event to occur — such as completion of I/O — are placed in a wait queue.
@@ -201,6 +211,9 @@
 
 >Some [operating systems](https://en.wikipedia.org/wiki/Operating_system) have an intermediate form of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), known as swapping, whose key idea is that sometimes it can be advantageous to **remove a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory** (and from active contention for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)) and thus reduce the degree of multiprogramming. Later, the [process](https://en.wikipedia.org/wiki/Process_(computing)) can be reintroduced into memory, and its execution can be continued where it left off. This scheme is known as swapping because a [process](https://en.wikipedia.org/wiki/Process_(computing)) can be “**swapped out**” from memory to disk, where its current status is saved, and later “**swapped in**” from disk back to memory, where its status is restored.
 ><div align="right">113p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>When a computer is multiprogrammed, it frequently has multiple [processes]() or threads competing for the CPU at the same time. This situation occurs whenever two or more of them are simultaneously in the ready state. If only one CPU is available, **a choice has to be made which process to run next. The part of the operating system that makes the choice** is called **the scheduler**, and the algorithm it uses is called the scheduling algorithm. These topics form the subject matter of the following sections. Many of the same issues that apply to process scheduling also apply to thread scheduling, although some are different.
+><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
 ### Summary
 
