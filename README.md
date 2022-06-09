@@ -166,7 +166,7 @@
 
 - **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is managing [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, and communication.**
 
-**Only [process scheduling](https://en.wikipedia.org/wiki/Process_management_(computing)) will be handled in this article.**
+**Only [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) will be handled in this article.**
 
 <details>
 <summary>References</summary>
@@ -190,31 +190,51 @@
 ## What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
-  <img src="https://www.guru99.com/images/1/122319_0900_ProcessSche1.png">
+  <img src="https://www.tutorialspoint.com/operating_system/images/queuing_diagram.jpg">
 </p>
 
->The [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) **selects an available [process](https://en.wikipedia.org/wiki/Process_(computing)) (possibly from a set of several available processes)** for program execution on a core.
+- **[Process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is selecting an available [process](https://en.wikipedia.org/wiki/Process_(computing)) which will be executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.**
+
+<details>
+<summary>References</summary>
+
+>The process scheduler is a part of the [operating system](https://en.wikipedia.org/wiki/Operating_system) that decides which [process](https://en.wikipedia.org/wiki/Process_(computing)) runs at a certain point in time.
+><div align="right">https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler</div>
+
+>The [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) **selects an available [process](https://en.wikipedia.org/wiki/Process_(computing)) (possibly from a set of several available [processes](https://en.wikipedia.org/wiki/Process_(computing)))** for program execution on a core.
 ><div align="right">110p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 >The role of the [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is to **select an available [process](https://en.wikipedia.org/wiki/Process_(computing))** to run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 ><div align="right">153p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->We distinguish between "**[long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling)**", "**[medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling)**", and "**[short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling)**" based on **how often decisions must be made**.
-><div align="right">https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler</div>
+>If only one CPU is available, a choice has to be made which process to run next. The part of the operating system that makes the choice is called the scheduler, and the algorithm it uses is called the scheduling algorithm.
+><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
->The **[long-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling)**, or **admission scheduler**, decides which jobs or [processes](https://en.wikipedia.org/wiki/Process_(computing)) are to be admitted to the [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready) (in main memory).
+</details>
+
+## What are the types of [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+
+<p align="center">
+  <img src="https://www.guru99.com/images/1/122319_0900_ProcessSche1.png">
+</p>
+
+- **Selecting an available [process](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). This is also called [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
+- **Selecting a [process](https://en.wikipedia.org/wiki/Process_(computing)) in a ready queue and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core. This is also called [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)). Also, this [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) involves [context switch](https://en.wikipedia.org/wiki/Context_switch).**
+- **Removing a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory to disk, which is called swap out, in order to reduce the degree of multiprogramming, and restoring the [process](https://en.wikipedia.org/wiki/Process_(computing)) from disk to memory, which is called swap in. This is also called [medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) or swapping.**
+
+<details>
+<summary>References</summary>
+
+>The [long-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling), or admission scheduler, decides which jobs or [processes](https://en.wikipedia.org/wiki/Process_(computing)) are to be admitted to the [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready) (in main memory).
 ><div align="right">https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling</div>
 
->The **[medium-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling)** temporarily **removes processes from main memory and places them in secondary memory** (such as a hard disk drive) or vice versa, which is commonly referred to as "**swapping out**" or "**swapping in**" (also incorrectly as "paging out" or "paging in").
+>The [medium-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) temporarily removes processes from main memory and places them in secondary memory (such as a hard disk drive) or vice versa, which is commonly referred to as "swapping out" or "swapping in" (also incorrectly as "paging out" or "paging in").
 ><div align="right">https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling</div>
 
->The **[short-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling)** (also known as the **CPU scheduler**) **decides which of the ready, in-memory processes is to be executed (allocated a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit))** after a clock interrupt, an I/O interrupt, an operating system call or another form of signal.
+>The [short-term scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) (also known as the CPU scheduler) decides which of the ready, in-memory processes is to be executed (allocated a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)) after a clock interrupt, an I/O interrupt, an operating system call or another form of signal.
 ><div align="right">[short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling)</div>
 
->As [processes](https://en.wikipedia.org/wiki/Process_(computing)) enter the system, they are **put into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready)**, where they are ready and waiting to execute on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)’s core.
-><div align="right">112p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->[Processes](https://en.wikipedia.org/wiki/Process_(computing)) that are waiting for a certain event to occur — such as completion of I/O — are placed in a wait queue.
+>As [processes](https://en.wikipedia.org/wiki/Process_(computing)) enter the system, they are put into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready), where they are ready and waiting to execute on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)’s core.
 ><div align="right">112p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 >A new [process](https://en.wikipedia.org/wiki/Process_(computing)) is initially put in the [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). It waits there until it is selected for execution, or dispatched. Once the [process](https://en.wikipedia.org/wiki/Process_(computing)) is allocated a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core and is executing, one of several events could occur:
@@ -223,33 +243,34 @@
 >- The [process](https://en.wikipedia.org/wiki/Process_(computing)) could be removed forcibly from the core, as a result of an interrupt or having its [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) expire, and be put back in the [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready).
 ><div align="right">112p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->The role of the **CPU scheduler** is to **select from among the [processes](https://en.wikipedia.org/wiki/Process_(computing)) that are in the [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready)** and **allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to one of them**.
+>The role of the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) scheduler is to select from among the [processes](https://en.wikipedia.org/wiki/Process_(computing)) that are in the [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready) and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to one of them.
 ><div align="right">113p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->Some [operating systems](https://en.wikipedia.org/wiki/Operating_system) have an intermediate form of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), known as swapping, whose key idea is that sometimes it can be advantageous to **remove a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory** (and from active contention for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)) and thus reduce the degree of multiprogramming. Later, the [process](https://en.wikipedia.org/wiki/Process_(computing)) can be reintroduced into memory, and its execution can be continued where it left off. This scheme is known as swapping because a [process](https://en.wikipedia.org/wiki/Process_(computing)) can be “**swapped out**” from memory to disk, where its current status is saved, and later “**swapped in**” from disk back to memory, where its status is restored.
+>Some [operating systems](https://en.wikipedia.org/wiki/Operating_system) have an intermediate form of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), known as swapping, whose key idea is that sometimes it can be advantageous to remove a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory (and from active contention for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)) and thus reduce the degree of multiprogramming. Later, the [process](https://en.wikipedia.org/wiki/Process_(computing)) can be reintroduced into memory, and its execution can be continued where it left off. This scheme is known as swapping because a [process](https://en.wikipedia.org/wiki/Process_(computing)) can be “swapped out” from memory to disk, where its current status is saved, and later “swapped in” from disk back to memory, where its status is restored.
 ><div align="right">113p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->When a computer is multiprogrammed, it frequently has multiple [processes]() or threads competing for the CPU at the same time. This situation occurs whenever two or more of them are simultaneously in the ready state. If only one CPU is available, **a choice has to be made which process to run next. The part of the operating system that makes the choice** is called **the scheduler**, and the algorithm it uses is called the scheduling algorithm. These topics form the subject matter of the following sections. Many of the same issues that apply to process scheduling also apply to thread scheduling, although some are different.
-><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+</details>
 
-### Summary
+## What is [context switch](https://en.wikipedia.org/wiki/Context_switch)?
 
-- [Process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is selecting an available [process](https://en.wikipedia.org/wiki/Process_(computing)) to run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
-- [Process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is distinguished to [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling), [medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling), and [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) based on how often decisions must be made.
-- [Long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling), also called admission scheduling, is putting [processes](https://en.wikipedia.org/wiki/Process_(computing)) into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready).
-- [Medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) is removing [processes](https://en.wikipedia.org/wiki/Process_(computing)) from memory or restoring removed [processes](https://en.wikipedia.org/wiki/Process_(computing)) back to memory, each of which is called "swap out" and "swap in".
-- [Short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling), also called **CPU scheduling**, is selecting [processes](https://en.wikipedia.org/wiki/Process_(computing)) in [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready) and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to one of them.
+<p align="center">
+  <img src="https://i.stack.imgur.com/6h1xc.png">
+</p>
 
-#### There are 3 forms 
+<details>
+<summary>References</summary>
 
-Scheduling Queues
-CPU Scheduling
-Context Switch
+>In computing, a [context switch](https://en.wikipedia.org/wiki/Context_switch) is the process of storing the state of a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)), so that it can be restored and resume execution at a later point.
+><div align="right">https://en.wikipedia.org/wiki/Context_switch</div>
 
-#### [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) leads to having multiple [processes](https://en.wikipedia.org/wiki/Process_(computing)) in memory at the same time. If several processes are ready to run at the same time, the system must choose which process will run next. Making this decision is [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling).
-<div align="right">24p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+>Switching the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to another [process](https://en.wikipedia.org/wiki/Process_(computing)) requires performing a state save of the current [process](https://en.wikipedia.org/wiki/Process_(computing)) and a state restore of a different [process](https://en.wikipedia.org/wiki/Process_(computing)). This task is known as a [context switch](https://en.wikipedia.org/wiki/Context_switch).
+><div align="right">114p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-## CPU scheduling
+</details>
+
+## What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
+## What is [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+## How does [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
 
 CPU - The hardware that executes instructions.
 Processor - Aphysical chip that contains one or more CPUs.
