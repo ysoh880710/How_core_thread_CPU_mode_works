@@ -1,10 +1,10 @@
 # How [thread](https://en.wikipedia.org/wiki/Thread_(computing)) works
 
-#### I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics make more difficult to understand.
+- **I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics make more difficult to understand.**
 
-#### I will try to summarize each topic in my word as simple as possible. However, please correct me if it is wrong.
+- **I will try to summarize each topic in my word as simple as possible. However, please correct me if it is wrong.**
 
-#### Understanding of [operating system](https://en.wikipedia.org/wiki/Operating_system) is inevitable. So I will begin with a brief explanation of [operating system](https://en.wikipedia.org/wiki/Operating_system).
+- **Understanding of [operating system](https://en.wikipedia.org/wiki/Operating_system) is inevitable. So I will begin with a brief explanation of [operating system](https://en.wikipedia.org/wiki/Operating_system).**
 
 ## What is [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
@@ -195,20 +195,51 @@
 
 - **[Process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is selecting an available [process](https://en.wikipedia.org/wiki/Process_(computing)) which will be executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.**
 
+- **There are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [nonpreemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking), or also called [cooperative](https://en.wikipedia.org/wiki/Cooperative_multitasking), [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) schemes.**
+
 <details>
 <summary>References</summary>
 
->The process scheduler is a part of the [operating system](https://en.wikipedia.org/wiki/Operating_system) that decides which [process](https://en.wikipedia.org/wiki/Process_(computing)) runs at a certain point in time.
+>The [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is a part of the [operating system](https://en.wikipedia.org/wiki/Operating_system) that decides which [process](https://en.wikipedia.org/wiki/Process_(computing)) runs at a certain point in time.
 ><div align="right">https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler</div>
 
->The [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) **selects an available [process](https://en.wikipedia.org/wiki/Process_(computing)) (possibly from a set of several available [processes](https://en.wikipedia.org/wiki/Process_(computing)))** for program execution on a core.
+>The [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) selects an available [process](https://en.wikipedia.org/wiki/Process_(computing)) (possibly from a set of several available [processes](https://en.wikipedia.org/wiki/Process_(computing))) for program execution on a core.
 ><div align="right">110p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->The role of the [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is to **select an available [process](https://en.wikipedia.org/wiki/Process_(computing))** to run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+>The role of the [process scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) is to select an available [process](https://en.wikipedia.org/wiki/Process_(computing)) to run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 ><div align="right">153p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->If only one CPU is available, a choice has to be made which process to run next. The part of the operating system that makes the choice is called the scheduler, and the algorithm it uses is called the scheduling algorithm.
+>If only one [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is available, a choice has to be made which [process](https://en.wikipedia.org/wiki/Process_(computing)) to run next. The part of the operating system that makes the choice is called the scheduler, and the algorithm it uses is called the [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) algorithm.
 ><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+## What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [nonpreemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+
+<p align="center">
+  <img src="https://prepinsta.com/wp-content/uploads/2019/03/Preemptive-Scheduling-vs-Non-Preemptive-Scheduling.png">
+</p>
+
+- [Preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) allows suspension of currently executing [process](https://en.wikipedia.org/wiki/Process_(computing)).
+- [Nonpreemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) does not allow suspension of currently executing [process](https://en.wikipedia.org/wiki/Process_(computing)).
+
+<details>
+<summary>References</summary>
+
+>Preemptive multitasking involves the use of an interrupt mechanism which suspends the currently executing [process](https://en.wikipedia.org/wiki/Process_(computing)) and invokes a scheduler to determine which [process](https://en.wikipedia.org/wiki/Process_(computing)) should execute next.
+><div align="right">https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking</div>
+
+>Cooperative multitasking, also known as non-preemptive multitasking, is a style of computer multitasking in which the operating system never initiates a [context switch](https://en.wikipedia.org/wiki/Context_switch) from a running [process](https://en.wikipedia.org/wiki/Process_(computing)) to another [process](https://en.wikipedia.org/wiki/Process_(computing)).
+><div align="right">https://en.wikipedia.org/wiki/Cooperative_multitasking</div>
+
+>Under [nonpreemptive scheduling](https://en.wikipedia.org/wiki/Cooperative_multitasking), once the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) has been allocated to a [process](https://en.wikipedia.org/wiki/Process_(computing)), the [process](https://en.wikipedia.org/wiki/Process_(computing)) keeps the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) until it releases it either by terminating or by switching to the waiting state.
+><div align="right">202p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [nonpreemptive scheduling](https://en.wikipedia.org/wiki/Cooperative_multitasking) algorithm picks a [process](https://en.wikipedia.org/wiki/Process_(computing)) to run and then just lets it run until it blocks (either on I/O or waiting for another [process](https://en.wikipedia.org/wiki/Process_(computing))) or voluntarily releases the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+><div align="right">153p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+>In contrast, a [preemptive scheduling](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) algorithm picks a [process](https://en.wikipedia.org/wiki/Process_(computing)) and lets it run for a maximum of some fixed time.
+><div align="right">153p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
 </details>
 
@@ -257,6 +288,8 @@
   <img src="https://i.stack.imgur.com/6h1xc.png">
 </p>
 
+- **[Context switch](https://en.wikipedia.org/wiki/Context_switch) is storing the state of current [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and restoring the state of different [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
+
 <details>
 <summary>References</summary>
 
@@ -269,8 +302,64 @@
 </details>
 
 ## What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
+
+<p align="center">
+  <img src="process.png">
+</p>
+
+- **[Process](https://en.wikipedia.org/wiki/Process_(computing)) is a program in execution which is fundamentally a container that holds all the information needed to run a program.**
+
+<details>
+<summary>References</summary>
+
+>In computing, a [process](https://en.wikipedia.org/wiki/Process_(computing)) is the instance of a [computer](https://en.wikipedia.org/wiki/Computer) program that is being executed by one or many [threads](https://en.wikipedia.org/wiki/Thread_(computing)).
+><div align="right">https://en.wikipedia.org/wiki/Process_(computing)</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a program in execution.
+><div align="right">103p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is the unit of work in most systems.
+><div align="right">103p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is basically a program in execution.
+><div align="right">39p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is fundamentally a container that holds all the information needed to run a program.
+><div align="right">39p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
 ## What is [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
-## How does [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
+
+<p align="center">
+  <img src="process_vs_thread.png">
+</p>
+
+- [Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on CPU for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system). It is a sequence of programmed [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) within a [process](https://en.wikipedia.org/wiki/Process_(computing)).
+
+<details>
+<summary>References</summary>
+
+>In computer science, a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) of execution is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the [operating system](https://en.wikipedia.org/wiki/Operating_system).
+><div align="right">https://en.wikipedia.org/wiki/Thread_(computing)</div>
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a basic unit of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) utilization.
+><div align="right">160p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>It shares with other [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)) its code section, data section, and other [operating-system](https://en.wikipedia.org/wiki/Operating_system) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as open files and signals.
+><div align="right">160p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the basic unit to which the [operating system](https://en.wikipedia.org/wiki/Operating_system) allocates processor time.
+><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads</div>
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the entity within a [process](https://en.wikipedia.org/wiki/Process_(computing)) that can be scheduled for execution.
+><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads</div>
+
+</details>
+
+## How do [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
+
+
 
 CPU - The hardware that executes instructions.
 Processor - Aphysical chip that contains one or more CPUs.
@@ -541,4 +630,4 @@ The execution flow in core from timer interrupt is as follows.
 
 ![CPU_core_thread](https://www.logicbig.com/quick-info/images/multithreading.png)
 
-# Organized by ysoh880710
+# Written by ysoh880710
