@@ -335,7 +335,7 @@
   <img src="process_vs_thread.png">
 </p>
 
-- [Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on CPU for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system). It is a sequence of programmed [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) within a [process](https://en.wikipedia.org/wiki/Process_(computing)).
+- **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system). It is within a [process](https://en.wikipedia.org/wiki/Process_(computing)), and shares code, data, BSS, and heap section with other [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)).**
 
 <details>
 <summary>References</summary>
@@ -359,7 +359,52 @@
 
 ## How do [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
 
+- **A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.**
+- **In memory perspective, [process](https://en.wikipedia.org/wiki/Process_(computing)) includes code, data, BSS, heap, and [threads](https://en.wikipedia.org/wiki/Thread_(computing)), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) includes stack and register.**
 
+<details>
+<summary>References</summary>
+
+>a [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.
+><div align="right">https://en.wikipedia.org/wiki/Thread_(computing)#Processes</div>
+
+>Although a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) must execute in some [process](https://en.wikipedia.org/wiki/Process_(computing)), the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and its [process](https://en.wikipedia.org/wiki/Process_(computing)) are different concepts and can be treated separately.
+><div align="right">103p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+## What is thread scheduling?
+
+<p align="center">
+  <img src="thread_scheduling.png">
+</p>
+
+- **Thread scheduling is selecting an available [thread](https://en.wikipedia.org/wiki/Thread_(computing)) which will be executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.**
+- **Selecting an available [thread](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). This is also called [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
+- **Selecting a [thread](https://en.wikipedia.org/wiki/Process_(computing)) in a ready queue and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core. This is also called [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)). Also, this [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) involves [context switch](https://en.wikipedia.org/wiki/Context_switch).**
+
+<details>
+<summary>References</summary>
+
+>On most modern [operating systems](https://en.wikipedia.org/wiki/Operating_system) it is kernel-level [threads](https://en.wikipedia.org/wiki/Thread_(computing))—not [processes](https://en.wikipedia.org/wiki/Process_(computing))—that are being scheduled by the [operating system](https://en.wikipedia.org/wiki/Operating_system).
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>Many of the same issues that apply to [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) also apply to thread scheduling, although some are different. When the kernel manages [threads](https://en.wikipedia.org/wiki/Thread_(computing)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is usually done per [thread](https://en.wikipedia.org/wiki/Thread_(computing)), with little or no regard to which [process](https://en.wikipedia.org/wiki/Process_(computing)) the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) belongs.
+><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+## How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and thread scheduling differ?
+
+- **They are same except the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system) is [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
+
+<details>
+<summary>References</summary>
+
+>Many of the same issues that apply to [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) also apply to thread scheduling, although some are different. When the kernel manages [threads](https://en.wikipedia.org/wiki/Thread_(computing)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is usually done per [thread](https://en.wikipedia.org/wiki/Thread_(computing)), with little or no regard to which [process](https://en.wikipedia.org/wiki/Process_(computing)) the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) belongs.
+><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
 
 CPU - The hardware that executes instructions.
 Processor - Aphysical chip that contains one or more CPUs.
