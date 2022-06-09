@@ -251,7 +251,6 @@
 
 - **Selecting an available [process](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). This is also called [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
 - **Selecting a [process](https://en.wikipedia.org/wiki/Process_(computing)) in a ready queue and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core. This is also called [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)). Also, this [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) involves [context switch](https://en.wikipedia.org/wiki/Context_switch).**
-- **Removing a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory to disk, which is called swap out, in order to reduce the degree of multiprogramming, and restoring the [process](https://en.wikipedia.org/wiki/Process_(computing)) from disk to memory, which is called swap in. This is also called [medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) or swapping.**
 
 <details>
 <summary>References</summary>
@@ -373,13 +372,13 @@
 
 </details>
 
-## What is thread scheduling?
+## What is [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
 
 <p align="center">
   <img src="thread_scheduling.png">
 </p>
 
-- **Thread scheduling is selecting an available [thread](https://en.wikipedia.org/wiki/Thread_(computing)) which will be executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.**
+- **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is selecting an available [thread](https://en.wikipedia.org/wiki/Thread_(computing)) which will be executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.**
 - **Selecting an available [thread](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). This is also called [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
 - **Selecting a [thread](https://en.wikipedia.org/wiki/Process_(computing)) in a ready queue and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core. This is also called [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)). Also, this [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) involves [context switch](https://en.wikipedia.org/wiki/Context_switch).**
 
@@ -394,17 +393,49 @@
 
 </details>
 
-## How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and thread scheduling differ?
+## How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) differ?
 
-- **They are same except the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system) is [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
+|[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))|[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))|
+|---|---|
+|<div align="center">**[Process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)**</div>|<div align="center">**[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))**</div>|
+|[Process](https://en.wikipedia.org/wiki/Process_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system)|[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system)|
+|All [processes](https://en.wikipedia.org/wiki/Process_(computing)) compete for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)|All [threads](https://en.wikipedia.org/wiki/Thread_(computing)) compete for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) regardless of what [processes](https://en.wikipedia.org/wiki/Process_(computing)) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belong to|
+|Selecting an available [process](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). ([long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)))|Selecting an available [thread](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). ([long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)))|
+|Removing a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory to disk, which is called swap out, in order to reduce the degree of multiprogramming, and restoring the [process](https://en.wikipedia.org/wiki/Process_(computing)) from disk to memory, which is called swap in. ([medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) or swapping)|Removing a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) from memory to disk, which is called swap out, in order to reduce the degree of multiprogramming, and restoring the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) from disk to memory, which is called swap in. ([medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) or swapping)|
+|[Process](https://en.wikipedia.org/wiki/Process_(computing)) information is in [Process Control Block (PCB)](https://en.wikipedia.org/wiki/Process_control_block)|[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is in [Thread Control Block (TCB)](https://en.wikipedia.org/wiki/Thread_control_block)|
+|-|Has [thread](https://en.wikipedia.org/wiki/Thread_(computing)) model and mapping due to [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread] and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))|
 
 <details>
 <summary>References</summary>
 
->Many of the same issues that apply to [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) also apply to thread scheduling, although some are different. When the kernel manages [threads](https://en.wikipedia.org/wiki/Thread_(computing)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is usually done per [thread](https://en.wikipedia.org/wiki/Thread_(computing)), with little or no regard to which [process](https://en.wikipedia.org/wiki/Process_(computing)) the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) belongs.
-><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+>Some systems (Unix variants, VMS) schedule [processes](https://en.wikipedia.org/wiki/Process_(computing)), not [threads](https://en.wikipedia.org/wiki/Thread_(computing)).
+><div align="right"https://stackoverflow.com/questions/25228642/why-is-process-scheduling-not-called-thread-scheduling</div>
+
+>Competition for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) with SCS scheduling takes place among all [threads](https://en.wikipedia.org/wiki/Thread_(computing)) in the system.
+><div align="right">218p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>Windows schedules at the thread granularity. This approach makes sense when you consider that [processes](https://en.wikipedia.org/wiki/Process_(computing)) don’t run but only provide resources and a context in which their [threads](https://en.wikipedia.org/wiki/Thread_(computing)) run. Because scheduling decisions are made strictly on a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) basis, no consideration is given to what [process](https://en.wikipedia.org/wiki/Process_(computing)) the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) belongs to.
+><div align="right">https://www.microsoftpressstore.com/articles/article.aspx?p=2233328&seqNum=7</div>
 
 </details>
+
+## What are [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+
+## What is the mapping of [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why it is needed?
+
+- [User](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) being mapped to [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope).
+
+>When we say "user-level threads map to kernel threads" we mean that the abstraction of threads presented to user-space is implemented using threads in kernel-space, with each user thread being represented by a kernel-implemented thread.
+><div align="right">https://www.quora.com/What-does-the-statement-user-level-threads-map-to-kernel-threads-mean</div>
+
+>To run on a CPU, user-level threads must ultimately be mapped to an associated kernel-level thread, although thismapping may be indirect and may use a lightweight process (LWP).
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>the thread library schedules user-level threads to run on an available LWP. This scheme is known as process contention scope (PCS), since competition for the CPU takes place among threads belonging to the same process. (When we say the thread library schedules user threads onto available LWPs, we do not mean that the threads are actually running on a CPU as that further requires the operating system to schedule the LWP’s kernel thread onto a physical CPU core.)
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>To decide which kernel-level thread to schedule onto a CPU, the kernel uses system-contention scope (SCS).
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 CPU - The hardware that executes instructions.
 Processor - Aphysical chip that contains one or more CPUs.
