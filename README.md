@@ -1,6 +1,6 @@
-# How core, [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) works
+# How [thread](https://en.wikipedia.org/wiki/Thread_(computing)) works
 
-#### I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics meant more difficult to understand to me.
+#### I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics make more difficult to understand.
 
 #### I will try to summarize each topic in my word as simple as possible. However, please correct me if it is wrong.
 
@@ -12,26 +12,46 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Operating_system_placement.svg/165px-Operating_system_placement.svg.png">
 </p>
 
->An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system **[software](https://en.wikipedia.org/wiki/Software) that manages computer [hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs**.
+- **An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a [software](https://en.wikipedia.org/wiki/Software) that manages [computer](https://en.wikipedia.org/wiki/Computer) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as [hardware](https://en.wikipedia.org/wiki/Computer_hardware) and [software](https://en.wikipedia.org/wiki/Software).**
+
+<details>
+<summary>References</summary>
+
+>An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system [software](https://en.wikipedia.org/wiki/Software) that manages computer [hardware](https://en.wikipedia.org/wiki/Computer_hardware), [software](https://en.wikipedia.org/wiki/Software) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), and provides common services for computer programs.
 ><div align="right">https://en.wikipedia.org/wiki/Operating_system</div>
 
->An [operating system](https://en.wikipedia.org/wiki/Operating_system) is **[software](https://en.wikipedia.org/wiki/Software) that manages a computer’s [hardware](https://en.wikipedia.org/wiki/Computer_hardware)**.
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) is [software](https://en.wikipedia.org/wiki/Software) that manages a [computer](https://en.wikipedia.org/wiki/Computer)’s [hardware](https://en.wikipedia.org/wiki/Computer_hardware).
 ><div align="right">3p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->A more common definition, and the one that we usually follow, is that the [operating system](https://en.wikipedia.org/wiki/Operating_system) is **the one program running at all times on the computer**—usually called the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)).
+>A more common definition, and the one that we usually follow, is that the [operating system](https://en.wikipedia.org/wiki/Operating_system) is the one program running at all times on the [computer](https://en.wikipedia.org/wiki/Computer)—usually called the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)).
 ><div align="right">6p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a **resource manager**. The system’s CPU, memory space, file-storage space, and I/O devices are among the resources that the [operating system](https://en.wikipedia.org/wiki/Operating_system) must manage.
+>An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a [resource](https://en.wikipedia.org/wiki/Resource#Computer_resources) manager. The system’s [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), memory space, file-storage space, and I/O devices are among the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) that the [operating system](https://en.wikipedia.org/wiki/Operating_system) must manage.
 ><div align="right">27p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->It is **hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is** other than saying it is the **software that runs in kernel mode**—and even that is not always true. Part of the problem is that [operating systems](https://en.wikipedia.org/wiki/Operating_system) perform two essentially unrelated functions: **providing application programmers (and application programs, naturally) a clean abstract set of resources** instead of the messy hardware ones and **managing these hardware resources**. Depending on who is doing the talking, you might hear mostly about one function or the other.
+>It is hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is other than saying it is the [software](https://en.wikipedia.org/wiki/Software) that runs in [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) mode—and even that is not always true. Part of the problem is that [operating systems](https://en.wikipedia.org/wiki/Operating_system) perform two essentially unrelated functions: providing application programmers (and application programs, naturally) a clean abstract set of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) instead of the messy [hardware](https://en.wikipedia.org/wiki/Computer_hardware) ones and managing these [hardware](https://en.wikipedia.org/wiki/Computer_hardware) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources).
 ><div align="right">3p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
-### Summary
-
-**- [Operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is a [software](https://en.wikipedia.org/wiki/Software) that manages [computer](https://en.wikipedia.org/wiki/Computer) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as [hardware](https://en.wikipedia.org/wiki/Computer_hardware) and [software](https://en.wikipedia.org/wiki/Software).**
+</details>
 
 ## What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+
+- **Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) (Time-Sharing)**
+- **Single-user and multi-user**
+- **Distributed**
+- **Templated**
+- **Embedded**
+- **Real-time**
+- **Library**
+- **Batch**
+- **Network**
+- **Multiprocessing**
+- **Mobile**
+
+**Only [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system) will be handled in this article.**
+
+<details>
+<summary>References</summary>
 
 >- Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
 >- Single-user and multi-user
@@ -50,48 +70,30 @@
 ><div align="right">https://www.geeksforgeeks.org/types-of-operating-systems/</div>
 
 >- Batch
->- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
+>- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) / Time Sharing
+>- Multiprocessing
 >- Real time
 >- Distributed
 >- Network
 >- Mobile
 ><div align="right">https://www.guru99.com/operating-system-tutorial.html#types-of-operating-system</div>
 
-### Summary
-
-- Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)
-- Single-user and multi-user
-- Distributed
-- Templated
-- Embedded
-- Real time
-- Batch
-- Network
-- Mobile
-
-#### I will limit to [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system) in this article.
-
-## What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) in [operating system](https://en.wikipedia.org/wiki/Operating_system)?
-
-<p align="center">
-  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png">
-</p>
-
->[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the **[concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks** (also known as processes) over a certain period of time.
-><div align="right">https://en.wikipedia.org/wiki/Computer_multitasking</div>
-
->[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is an extension of [multiprogramming](https://en.wikipedia.org/wiki/Computer_multitasking#Multiprogramming) wherein [CPU scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) algorithms rapidly switch between [processes](https://en.wikipedia.org/wiki/Process_(computing)), providing users with a fast response time.
-><div align="right">52p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
-### Summary
-
-**- [Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple tasks.**
-
-#### For more detail about concurrency, read Parallel Computing.
-
-## What is [multiprogramming](https://en.wikipedia.org/wiki/Computer_multitasking#Multiprogramming)?
+</details>
 
 ## What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+
+- **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))**
+- **Memory management**
+- **File system management**
+- **Mass storage management**
+- **Cache management**
+- **I/O system management**
+- **Security and protection**
+
+**Only [process management](https://en.wikipedia.org/wiki/Process_management_(computing)) will be handled in this article.**
+
+<details>
+<summary>References</summary>
 
 >- Security
 >- Control over system performance
@@ -124,21 +126,9 @@
 >- Cache Management
 >- I/O System Management
 >- Security and Protection
->- Virtualization
 ><div align="right">27p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-### Summary
-
-- [Process Management](https://en.wikipedia.org/wiki/Process_management_(computing))
-- Memory Management
-- File-System Management
-- Mass-Storage Management
-- Cache Management
-- I/O System Management
-- Security and Protection
-- Virtualization
-
-#### I will limit to [process management](https://en.wikipedia.org/wiki/Process_management_(computing)) in this article.
+</details>
 
 ## Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
 
@@ -151,9 +141,40 @@
 >It is **hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is** other than saying it is the **software that runs in kernel mode**—and even that is not always true.
 ><div align="right">3p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
+## What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)?
+
+<p align="center">
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png">
+</p>
+
+- **[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple [tasks](https://en.wikipedia.org/wiki/Task_(computing)) on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) cores.**
+
+**For more detail about [concurrency](https://en.wikipedia.org/wiki/Concurrency_(computer_science)), read [Parallel Computing](https://github.com/ysoh880710/ParallelComputing).**
+
+<details>
+<summary>References</summary>
+
+>[Multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple [tasks](https://en.wikipedia.org/wiki/Task_(computing)) (also known as [processes](https://en.wikipedia.org/wiki/Process_(computing))) over a certain period of time.
+><div align="right">https://en.wikipedia.org/wiki/Computer_multitasking</div>
+
+>In [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) systems, the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes multiple [processes](https://en.wikipedia.org/wiki/Process_(computing)) by switching among them, but the switches occur frequently, providing the user with a fast response time.
+><div align="right">23p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
 ## What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
 
->[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) involves various tasks like creation, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), termination of [processes](https://en.wikipedia.org/wiki/Process_(computing)), and a dead lock.
+- **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is managing [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, and communication.**
+
+**Only [process scheduling](https://en.wikipedia.org/wiki/Process_management_(computing)) will be handled in this article.**
+
+<details>
+<summary>References</summary>
+
+>An integral part of any modern-day [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system). The [OS](https://en.wikipedia.org/wiki/Operating_system) must allocate [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) to [processes](https://en.wikipedia.org/wiki/Process_(computing)), enable [processes](https://en.wikipedia.org/wiki/Process_(computing)) to share and exchange information, protect the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) of each [process](https://en.wikipedia.org/wiki/Process_(computing)) from other [processes](https://en.wikipedia.org/wiki/Process_(computing)) and enable synchronization among [processes](https://en.wikipedia.org/wiki/Process_(computing)).
+><div align="right">https://en.wikipedia.org/wiki/Process_management_(computing)</div>
+
+>[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) involves various [tasks](https://en.wikipedia.org/wiki/Task_(computing)) like creation, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), termination of [processes](https://en.wikipedia.org/wiki/Process_(computing)), and a dead lock.
 ><div align="right">https://www.guru99.com/process-management-pcb.html</div>
 
 >The [operating system](https://en.wikipedia.org/wiki/Operating_system) is responsible for the following activities in connection with [process management](https://en.wikipedia.org/wiki/Process_management_(computing)):
@@ -164,11 +185,7 @@
 >- Providing mechanisms for [process](https://en.wikipedia.org/wiki/Process_(computing)) communication
 ><div align="right">28p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-### Summary
-
-- [Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is management of [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, communication.
-
-#### I will limit to [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) in this article.
+</details>
 
 ## What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
