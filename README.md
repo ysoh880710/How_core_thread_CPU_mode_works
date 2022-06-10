@@ -412,6 +412,10 @@
 
 ## How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) differ?
 
+<p align="center">
+  <img src="process_scheduling_vs_thread_scheduling.png">
+</p>
+
 |[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))|[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))|
 |---|---|
 |<div align="center">**[Process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)**</div>|<div align="center">**[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))**</div>|
@@ -422,15 +426,11 @@
 |[Process](https://en.wikipedia.org/wiki/Process_(computing)) information is in [Process Control Block (PCB)](https://en.wikipedia.org/wiki/Process_control_block)|[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is in [Thread Control Block (TCB)](https://en.wikipedia.org/wiki/Thread_control_block)|
 |-|Has [thread](https://en.wikipedia.org/wiki/Thread_(computing)) model and mapping due to [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread] and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))|
 
-<p align="center">
-  <img src="thread_model.png">
-</p>
-
 <details>
 <summary>References</summary>
 
 >Some systems (Unix variants, VMS) schedule [processes](https://en.wikipedia.org/wiki/Process_(computing)), not [threads](https://en.wikipedia.org/wiki/Thread_(computing)).
-><div align="right"https://stackoverflow.com/questions/25228642/why-is-process-scheduling-not-called-thread-scheduling</div>
+><div align="right">https://stackoverflow.com/questions/25228642/why-is-process-scheduling-not-called-thread-scheduling</div>
 
 >When the kernel manages [threads](https://en.wikipedia.org/wiki/Thread_(computing)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is usually done per [thread](https://en.wikipedia.org/wiki/Thread_(computing)), with little or no regard to which [process](https://en.wikipedia.org/wiki/Process_(computing)) the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) belongs.
 ><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
@@ -443,23 +443,49 @@
 
 </details>
 
-## What are [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+## What are [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
 
-## What is the mapping of [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why it is needed?
+<p align="center">
+  <img src="thread_model.png">
+</p>
 
-- [User](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) being mapped to [kernel](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope).
+- **A [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) that the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is aware of and manages. A [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system) during [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
+- **A [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)), also called [Green thread](https://en.wikipedia.org/wiki/Green_threads), is a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) that [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library manages and [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is unaware of. A [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) must be mapped to a [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to be executed.**
+
+<details>
+<summary>References</summary>
+
+>[User](https://en.wikipedia.org/wiki/User_space_and_kernel_space) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are supported above the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) and are managed without [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) support, whereas [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are supported and managed directly by the [operating system](https://en.wikipedia.org/wiki/Operating_system).
+><div align="right">166p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>[User](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are managed by a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library, and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is unaware of them.
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What is the mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why is it needed?
+
+- **The mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) executing [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
+- **The reason why mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is needed is [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) cannot run on its own. [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) that are being scheduled for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system).**
+- **[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) scheme of [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) is [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope).**
+- **[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) scheme of [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is [system contention scope (SCS)](https://en.wikipedia.org/wiki/System_Contention_Scope).**
+
+<details>
+<summary>References</summary>
 
 >When we say "user-level threads map to kernel threads" we mean that the abstraction of threads presented to user-space is implemented using threads in kernel-space, with each user thread being represented by a kernel-implemented thread.
 ><div align="right">https://www.quora.com/What-does-the-statement-user-level-threads-map-to-kernel-threads-mean</div>
 
->To run on a CPU, user-level threads must ultimately be mapped to an associated kernel-level thread, although thismapping may be indirect and may use a lightweight process (LWP).
+>So in a nutshell user threads need to be mapped to kernel threads because it’s the kernel that schedules the thread for execution onto the CPU and for that it must know about the thread that it is scheduling.
+><div align="right">https://www.geeksforgeeks.org/why-must-user-threads-be-mapped-to-a-kernel-thread/</div>
+
+>To run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) must ultimately be mapped to an associated [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))-level [thread](https://en.wikipedia.org/wiki/Thread_(computing)), although this mapping may be indirect and may use a lightweight process (LWP).
 ><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->the thread library schedules user-level threads to run on an available LWP. This scheme is known as process contention scope (PCS), since competition for the CPU takes place among threads belonging to the same process. (When we say the thread library schedules user threads onto available LWPs, we do not mean that the threads are actually running on a CPU as that further requires the operating system to schedule the LWP’s kernel thread onto a physical CPU core.)
+>the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library schedules [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to run on an available LWP. This scheme is known as [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope), since competition for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) takes place among [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)). (When we say the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library schedules [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) onto available LWPs, we do not mean that the [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are actually running on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) as that further requires the [operating system](https://en.wikipedia.org/wiki/Operating_system) to schedule the LWP’s [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) [thread](https://en.wikipedia.org/wiki/Thread_(computing)) onto a physical [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.) To decide which [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))-level [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to schedule onto a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) uses [system-contention scope (SCS)](https://en.wikipedia.org/wiki/System_Contention_Scope).
 ><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->To decide which kernel-level thread to schedule onto a CPU, the kernel uses system-contention scope (SCS).
-><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+</details>
 
 CPU - The hardware that executes instructions.
 Processor - Aphysical chip that contains one or more CPUs.
