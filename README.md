@@ -494,11 +494,14 @@ Multicore - Including multiple computing cores on the same CPU.
 Multiprocessor - Including multiple processors.
 <div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-## What are [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit), [processor](https://en.wikipedia.org/wiki/Processor_(computing)), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor), core?
-
-### [Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)
+## What is [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)?
 
 ![Computer hardware](https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/176067216_1813918015455920_2474979289003788370_n.jpg?stp=cp0_dst-jpg_e15_q65_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=110474&_nc_ohc=H8i6zv687LUAX9p3zZu&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-8th1QddD70eFq1w9WqrgTgDP9ZnV0LlovbidhYv_bA&oe=62B83238)
+
+- **[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) is physical parts of a computer, such as [Central Processing Unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), [Random Access Memory (RAM)](https://en.wikipedia.org/wiki/Random-access_memory), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.**
+
+<details>
+<summary>References</summary>
 
 >[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) includes the physical parts of a computer, such as the case, **[central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)**, random access memory (RAM), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.
 ><div align="right">https://en.wikipedia.org/wiki/Computer_hardware</div>
@@ -506,121 +509,171 @@ Multiprocessor - Including multiple processors.
 >[Hardware](https://en.wikipedia.org/wiki/Computer_hardware) is typically directed by the software to execute any command or [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
 ><div align="right">https://en.wikipedia.org/wiki/Computer_hardware</div>
 
-### [Integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit)
+</details>
 
->An [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) or monolithic [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) (also referred to as an IC, a chip, or a microchip) is a set of electronic circuits on one small flat piece (or "chip") of semiconductor material, usually silicon.
-><div align="right">https://en.wikipedia.org/wiki/Integrated_circuit</div>
+## What is [processor](https://en.wikipedia.org/wiki/Processor_(computing))?
 
-### [Processor](https://en.wikipedia.org/wiki/Processor_(computing))
+- **A [processor](https://en.wikipedia.org/wiki/Processor_(computing)) is an electrical component that performs operations on an external data source, such as [memory](https://en.wikipedia.org/wiki/Computer_memory).**
+
+<details>
+<summary>References</summary>
 
 >A [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or processing unit is an electrical component (digital circuit) that performs operations on an external data source, usually memory or some other data stream.
 ><div align="right">https://en.wikipedia.org/wiki/Processor_(computing)</div>
 
->The term is frequently used to refer to the [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit) in a system. However, it can also refer to other coprocessors, such as a graphics processing unit (GPU).
-><div align="right">https://en.wikipedia.org/wiki/Processor_(computing)</div>
+>[Processor](https://en.wikipedia.org/wiki/Processor_(computing)) - Aphysical chip that contains one or more [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit).
+><div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)
+- This seems wrong as far as not all [processors](https://en.wikipedia.org/wiki/Processor_(computing)) contain one or more [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit).
+
+</details>
+
+## What are the types of [processors](https://en.wikipedia.org/wiki/Processor_(computing))?
+
+- [Central Processing Unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)
+- [Graphics Processing Unit (GPU)](https://en.wikipedia.org/wiki/Graphics_processing_unit)
+
+## What is [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)?
 
 |![Intel](https://assets.hardwarezone.com/img/2021/11/Corei9_02.jpg)|![AMD](https://cdn.mos.cms.futurecdn.net/mnzNfoMcmVXme8vxENcyjm-970-80.jpg)|
 |---|---|
 |<div align="center">Intel i9 12900K</div>|<div align="center">AMD Ryzen 9 5950X</div>|
 
->A [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), also called a central [processor](https://en.wikipedia.org/wiki/Processor_(computing)), main [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or just [processor](https://en.wikipedia.org/wiki/Processor_(computing)), is the electronic circuitry that **executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** comprising a computer program. The [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) performs basic **arithmetic, logic, controlling, and input/output (I/O) operations specified by the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** in the program.
+- **A [Central Processing Unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit) is a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) that executes arithmetic, logic, controlling, and input/output (I/O) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).**
+
+<details>
+<summary>References</summary>
+
+>A [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), also called a central [processor](https://en.wikipedia.org/wiki/Processor_(computing)), main [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or just [processor](https://en.wikipedia.org/wiki/Processor_(computing)), is the electronic circuitry that executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) comprising a computer program. The [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) in the program.
 ><div align="right">https://en.wikipedia.org/wiki/Central_processing_unit</div>
 
-### [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)
+>[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) - The [hardware](https://en.wikipedia.org/wiki/Computer_hardware) that executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
+><div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer **[processor](https://en.wikipedia.org/wiki/Processor_(computing))** on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) with two or more separate processing units, called **cores**, each of which **reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**. The **[instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are ordinary [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** (such as add, move data, and branch) but the single [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can run [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) on separate cores at the same time, increasing overall speed for programs that support multithreading or other parallel computing techniques.
+</details>
+
+## What is [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)?
+
+- **A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains multiple [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit), which are called cores.**
+
+<details>
+<summary>References</summary>
+
+>A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a computer [processor](https://en.wikipedia.org/wiki/Processor_(computing)) on a single [integrated circuit](https://en.wikipedia.org/wiki/Integrated_circuit) with two or more separate processing units, called cores, each of which reads and executes program [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)). The [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are ordinary [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) (such as add, move data, and branch) but the single [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can run [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) on separate cores at the same time, increasing overall speed for programs that support multithreading or other parallel computing techniques.
 ><div align="right">https://en.wikipedia.org/wiki/Multi-core_processor</div>
 
->A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is **a single [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)** that contains more than one microprocessor core.
+>A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a single [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one microprocessor core.
 ><div align="right">https://en.wikipedia.org/wiki/Microprocessor</div>
 
-### Core
+>Multicore - Including multiple computing cores on the same [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+><div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What is core?
+
+>**A core is the basic computation unit, which executes instructions, of the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).**
+
+<details>
+<summary>References</summary>
 
 >A core is **an execution unit inside the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that receives and executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))**.
 ><div align="right">https://pediaa.com/difference-between-cpu-and-core</div>
 
-### Difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core
+>The core is the component that executes [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) and registers for storing data locally.
+><div align="right">15p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>Core - The basic computation unit of the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+><div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## How do [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core differ?
 
 |<div align="center">![CPU diagram](https://media.geeksforgeeks.org/wp-content/uploads/20210605182444/CPUblock-660x495.jpg)</div>|<div align="center">![Multi-core CPU diagram](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/CPU.png)</div>|
 |---|---|
-|<div align="center">CPU diagram</div>|<div align="center">Multi-core CPU diagram</div>|
+|<div align="center">CPU diagram</div>|<div align="center">Multi-core CPU diagram 1</div>|
 |<div align="center">![Core diagram 1](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/Core-2.png)</div>|<div align="center">![Core diagram 2](https://ars.els-cdn.com/content/image/3-s2.0-B9780128014134000118-f11-15-9780128014134.jpg)</div>|
-|<div align="center">Core diagram 1</div>|<div align="center">Core diagram 2</div>|
+|<div align="center">Core diagram</div>|<div align="center">Multi-core CPU diagram 2</div>|
 
-#### [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different. (Compare multi-core CPU diagram and Core diagram 1)
+- **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different. (Compare Multi-core CPU diagram 1 and Core diagram)**
 
-![Differences Between Core and CPU](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-c7135cdceb9b5a510d176ca7da28eb6a_l3.svg)
+<details>
+<summary>References</summary>
 
->**While cores actually process [tasks](https://en.wikipedia.org/wiki/Task_(computing)), a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is responsible for controlling the cores**.
+![Differences Between CPU and core](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-c7135cdceb9b5a510d176ca7da28eb6a_l3.svg)
+
+>**While cores actually process [tasks](https://en.wikipedia.org/wiki/Task_(computing)), a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is responsible for controlling the cores**, as well as interfacing data from other [computer](https://en.wikipedia.org/wiki/Computer) system components to them.
 ><div align="right">https://www.baeldung.com/cs/core-vs-cpu</div>
 
-#### Core is [CPU](https://en.wikipedia.org/wiki/Central_processing_unit). (Compare CPU diagram, Core diagram 1, and Core diagram 2)
+</details>
 
->**A core is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [processor](https://en.wikipedia.org/wiki/Processor_(computing)) built into a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) socket.**
+**- Core is [CPU](https://en.wikipedia.org/wiki/Central_processing_unit). (Compare CPU diagram, Core diagram, and core in Multi-core CPU diagram 2)**
+
+<details>
+<summary>References</summary>
+
+>A core is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [processor](https://en.wikipedia.org/wiki/Processor_(computing)) built into a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) socket.
 ><div align="right">https://www.sciencedirect.com/topics/computer-science/core-processor</div>
 
->More reference about difference between [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core : [Difference between core and processor, stackoverflow](https://stackoverflow.com/questions/19225859/difference-between-core-and-processor)
+</details>
 
-#### In conclusion, [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different from perspective of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) meaning [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor). [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are same from perspective of definition and components of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+- **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different from perspective of a [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) as a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit). [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are same from perspective of the definition of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).**
 
-### Summary
+## What is [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))?
 
-#### - [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware).
+- **An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) defined by the [processor](https://en.wikipedia.org/wiki/Processor_(computing)) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).**
 
-#### - [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is a type of [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
-
-#### - [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes arithmetic, logic, controlling, and input/output (I/O) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
-
-#### - [Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a big [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains more than one core, which is a small [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executing [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
-
-## What are [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), [instruction set](https://simple.wikipedia.org/wiki/Instruction_set), [x86](https://en.wikipedia.org/wiki/X86), [x86-64](https://en.wikipedia.org/wiki/X86-64), [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
-
-### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
+<details>
+<summary>References</summary>
 
 >An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) defined by the [processor](https://en.wikipedia.org/wiki/Processor_(computing)) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
 ><div align="right">https://simple.wikipedia.org/wiki/Instruction_(computer_science)</div>
 
-### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set)
+</details>
+
+## What is [instruction set](https://simple.wikipedia.org/wiki/Instruction_set)?
+
+- **An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can execute.**
+
+**Only [x86](https://en.wikipedia.org/wiki/X86), precisely [x86-64](https://en.wikipedia.org/wiki/X86-64), will be handled in this article.**
+
+<details>
+<summary>References</summary>
 
 >An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can execute.
 ><div align="right">https://simple.wikipedia.org/wiki/Instruction_set</div>
 
-#### Every [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or [processor](https://en.wikipedia.org/wiki/Processor_(computing)) family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
-<div align="right">https://en.wikipedia.org/wiki/Machine_code</div>
+>Every [processor](https://en.wikipedia.org/wiki/Processor_(computing)) or [processor](https://en.wikipedia.org/wiki/Processor_(computing)) family has its own [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
+><div align="right">https://en.wikipedia.org/wiki/Machine_code</div>
 
-#### There are many [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set). ([List of instruction sets](https://en.wikipedia.org/wiki/Comparison_of_instruction_set_architectures))
+</details>
 
-#### [x86](https://en.wikipedia.org/wiki/X86) and [x86-64](https://en.wikipedia.org/wiki/X86-64) are examples of [instruction sets](https://simple.wikipedia.org/wiki/Instruction_set).
+## What is [x86](https://en.wikipedia.org/wiki/X86)?
 
-### [x86](https://en.wikipedia.org/wiki/X86)
+- **[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant.**
+
+<details>
+<summary>References</summary>
 
 >[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant.
 ><div align="right">https://en.wikipedia.org/wiki/X86</div>
 
-### [x86-64](https://en.wikipedia.org/wiki/X86-64)
+</details>
+
+## What is [x86-64](https://en.wikipedia.org/wiki/X86-64)?
+
+- **[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).**
+
+**If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).**
+
+<details>
+<summary>References</summary>
 
 >[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
 ><div align="right">https://en.wikipedia.org/wiki/X86-64</div>
 
-#### If your [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is AMD Ryzen Series or Intel Core i3, Core i5, Core i7, Core i9, it belongs to [x86-64](https://en.wikipedia.org/wiki/X86-64).
-
-### [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
-
-![Thread](https://upload.wikimedia.org/wikipedia/commons/a/a5/Multithreaded_process.svg)
-
->A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) of execution is **the smallest sequence of programmed [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science))** that can be managed independently by a **scheduler**, which is typically a part of the **[operating system](https://en.wikipedia.org/wiki/Operating_system)**.
-
-### Summary
-
-#### [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)).
-
-#### [Instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)).
-
-#### [x86](https://en.wikipedia.org/wiki/X86) and [x86-64](https://en.wikipedia.org/wiki/X86-64) are examples of [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).
-
-#### [Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the smallest sequence of programmed [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that can be managed independently by a **scheduler**, which is typically a part of the **[operating system](https://en.wikipedia.org/wiki/Operating_system)**.
+</details>
 
 ## What are scheduler, [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
