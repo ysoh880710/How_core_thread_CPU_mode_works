@@ -1,4 +1,4 @@
-# How [thread](https://en.wikipedia.org/wiki/Thread_(computing)) works
+# How [threads](https://en.wikipedia.org/wiki/Thread_(computing)) works
 
 - **I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics make more difficult to understand.**
 
@@ -8,9 +8,8 @@
 
 ## What is [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Operating_system_placement.svg/165px-Operating_system_placement.svg.png">
-</p>
+|<div align="center">![operating_system1](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Operating_system_placement.svg/165px-Operating_system_placement.svg.png)</div>|<div align="center">![operating_system2](https://www.tutorialspoint.com/operating_system/images/conceptual_view.jpg)</div>|
+|---|---|
 
 - **An [operating system](https://en.wikipedia.org/wiki/Operating_system) is a [software](https://en.wikipedia.org/wiki/Software) that manages [computer](https://en.wikipedia.org/wiki/Computer) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as [hardware](https://en.wikipedia.org/wiki/Computer_hardware) and [software](https://en.wikipedia.org/wiki/Software).**
 
@@ -31,6 +30,22 @@
 
 >It is hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is other than saying it is the [software](https://en.wikipedia.org/wiki/Software) that runs in [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) mode—and even that is not always true. Part of the problem is that [operating systems](https://en.wikipedia.org/wiki/Operating_system) perform two essentially unrelated functions: providing application programmers (and application programs, naturally) a clean abstract set of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) instead of the messy [hardware](https://en.wikipedia.org/wiki/Computer_hardware) ones and managing these [hardware](https://en.wikipedia.org/wiki/Computer_hardware) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources).
 ><div align="right">3p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+## What is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))?
+
+<p align="center">
+  <img src="https://miro.medium.com/max/1400/1*iuW845pwRhd49KEUYvzsmg.png">
+</p>
+
+- The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a [computer](https://en.wikipedia.org/wiki/Computer)'s [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system.
+
+<details>
+<summary>References</summary>
+
+>The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a [computer](https://en.wikipedia.org/wiki/Computer)'s [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system.
+><div align="right">https://en.wikipedia.org/wiki/Kernel_(operating_system)</div>
 
 </details>
 
@@ -160,6 +175,9 @@
 >In [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) systems, the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes multiple [processes](https://en.wikipedia.org/wiki/Process_(computing)) by switching among them, but the switches occur frequently, providing the user with a fast response time.
 ><div align="right">23p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
+>A [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system) divides the available processor time among the [processes](https://en.wikipedia.org/wiki/Process_(computing)) or [threads](https://en.wikipedia.org/wiki/Thread_(computing)) that need it.
+><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking</div>
+
 </details>
 
 ## What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
@@ -211,6 +229,10 @@
 
 >If only one [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is available, a choice has to be made which [process](https://en.wikipedia.org/wiki/Process_(computing)) to run next. The part of the operating system that makes the choice is called the scheduler, and the algorithm it uses is called the [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) algorithm.
 ><div align="right">149p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+### [Preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking)
+
+>The term [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) is used to distinguish a multitasking operating system, which permits preemption of tasks, from a cooperative multitasking system wherein processes or tasks must be explicitly programmed to yield when they do not need system resources.
 
 </details>
 
@@ -280,6 +302,10 @@
 >Some [operating systems](https://en.wikipedia.org/wiki/Operating_system) have an intermediate form of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), known as swapping, whose key idea is that sometimes it can be advantageous to remove a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory (and from active contention for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)) and thus reduce the degree of multiprogramming. Later, the [process](https://en.wikipedia.org/wiki/Process_(computing)) can be reintroduced into memory, and its execution can be continued where it left off. This scheme is known as swapping because a [process](https://en.wikipedia.org/wiki/Process_(computing)) can be “swapped out” from memory to disk, where its current status is saved, and later “swapped in” from disk back to memory, where its status is restored.
 ><div align="right">113p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
+### [Time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)
+
+>The period of time for which a process is allowed to run in a [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) system is generally called the [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) or quantum. ([Preemption (computing), wikipedia](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice))
+
 </details>
 
 ## What is [context switch](https://en.wikipedia.org/wiki/Context_switch)?
@@ -292,6 +318,9 @@
 
 <details>
 <summary>References</summary>
+
+>This preemptive scheduler usually runs in the most privileged protection ring, meaning that interruption and resuming are considered highly secure actions. Such a change in the currently executing task of a processor is known as context switching.
+><div align="right">https://en.wikipedia.org/wiki/Preemption_(computing)</div>
 
 >In computing, a [context switch](https://en.wikipedia.org/wiki/Context_switch) is the process of storing the state of a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)), so that it can be restored and resume execution at a later point.
 ><div align="right">https://en.wikipedia.org/wiki/Context_switch</div>
@@ -496,7 +525,9 @@ Multiprocessor - Including multiple processors.
 
 ## What is [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)?
 
-![Computer hardware](https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/176067216_1813918015455920_2474979289003788370_n.jpg?stp=cp0_dst-jpg_e15_q65_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=110474&_nc_ohc=H8i6zv687LUAX9p3zZu&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-8th1QddD70eFq1w9WqrgTgDP9ZnV0LlovbidhYv_bA&oe=62B83238)
+<p align="center">
+  <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/176067216_1813918015455920_2474979289003788370_n.jpg?stp=cp0_dst-jpg_e15_q65_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=110474&_nc_ohc=H8i6zv687LUAX9p3zZu&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-8th1QddD70eFq1w9WqrgTgDP9ZnV0LlovbidhYv_bA&oe=62B83238">
+</p>
 
 - **[Computer hardware](https://en.wikipedia.org/wiki/Computer_hardware) is physical parts of a computer, such as [Central Processing Unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), [Random Access Memory (RAM)](https://en.wikipedia.org/wiki/Random-access_memory), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.**
 
@@ -553,6 +584,10 @@ Multiprocessor - Including multiple processors.
 </details>
 
 ## What is [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)?
+
+<p align="center">
+  <img src="https://www.logicbig.com/quick-info/images/multithreading.png">
+</p>
 
 - **A [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) is a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) that contains multiple [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit), which are called cores.**
 
@@ -675,98 +710,11 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are scheduler, [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [operating system](https://en.wikipedia.org/wiki/Operating_system)?
-
-### [Operating system](https://en.wikipedia.org/wiki/Operating_system)
-
-![operating_system](https://www.tutorialspoint.com/operating_system/images/conceptual_view.jpg)
-
->An [operating system (OS)](https://en.wikipedia.org/wiki/Operating_system) is system software that manages [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware), software resources, and provides common services for computer programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system))
-
->An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Kernel_(operating_system)) program which determines how much time each [process]() spends executing, and in which order execution control should be passed to programs.
-
-### [Kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))
-
-![kernel](https://miro.medium.com/max/1400/1*iuW845pwRhd49KEUYvzsmg.png)
-
->The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a computer's [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system. ([Kernel (operating system), wikipedia](https://en.wikipedia.org/wiki/Kernel_(operating_system)))
-
-### [Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
-
->[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is the action of assigning resources to perform [tasks](https://en.wikipedia.org/wiki/Task_(computing)). The resources may be [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), network links or expansion cards. The [tasks](https://en.wikipedia.org/wiki/Task_(computing)) may be [threads](https://en.wikipedia.org/wiki/Thread_(computing)), [processes](https://en.wikipedia.org/wiki/Process_(computing)) or data flows. ([Scheduling (computing), wikipedia](https://en.wikipedia.org/wiki/Scheduling_(computing)))
-
-#### An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) program which determines how much time each [process](https://en.wikipedia.org/wiki/Process_(computing)) spends executing, and in which order execution control should be passed to programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system#Multitasking))
-
-#### There are many types of [operating systems](https://en.wikipedia.org/wiki/Operating_system). ([Types of operating systems](https://en.wikipedia.org/wiki/Operating_system#Types_of_operating_systems))
-
-#### I will pick [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), precisely [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking), for my explanation.
-
-#### If your [operating system](https://en.wikipedia.org/wiki/Operating_system) is [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows), it belongs to [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) [operating system](https://en.wikipedia.org/wiki/Operating_system).
-
-## What are [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking)?
-
-### [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking)
-
-![multitasking](https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png)
-
->[Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) is the [concurrent](https://en.wikipedia.org/wiki/Concurrency_(computer_science)) execution of multiple [tasks](https://en.wikipedia.org/wiki/Task_(computing)) (also known as processes) over a certain period of time. ([Computer multitasking, wikipedia](https://en.wikipedia.org/wiki/Computer_multitasking))
-
->[Multitasking](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking) in [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) allocates a processor [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) to each [thread](https://en.wikipedia.org/wiki/Thread_(computing)) it executes. ([Multitasking, microsoft docs](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking))
-
-### [Preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking)
-
->The term [preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) is used to distinguish a multitasking operating system, which permits preemption of tasks, from a cooperative multitasking system wherein processes or tasks must be explicitly programmed to yield when they do not need system resources.
-
-## [Process](https://en.wikipedia.org/wiki/Process_(computing)), [thread](https://en.wikipedia.org/wiki/Thread_(computing)), [operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
-
-### [Process](https://en.wikipedia.org/wiki/Process_(computing))
-
-### [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
-
->A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the sequence of [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) given to cores. ([CPU Cores VS Threads Explained, youtube](https://youtu.be/hwTYDQ0zZOw))
-
->[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) in [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) is the basic unit to which an operating system allocates processor time. ([Threads and threading, microsoft docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/threads-and-threading))
-
->More reference about [thread](https://en.wikipedia.org/wiki/Thread_(computing)) : [Thread (computing), wikipedia](https://en.wikipedia.org/wiki/Thread_(computing))
-
-### Difference between [Process](https://en.wikipedia.org/wiki/Process_(computing)) and [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
-
-## [Operating system](https://en.wikipedia.org/wiki/Operating_system), [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), [Preemptive multitasking](https://en.wikipedia.org/wiki/Preemption_(computing)), [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
-
 ![Scheduling](http://beyondthegeek.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-29-at-12.39.17-AM-500x484.png)
-
-- An [operating system](https://en.wikipedia.org/wiki/Operating_system) [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) contains a [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) program which determines how much time each process spends executing, and in which order execution control should be passed to programs. ([Operating system, wikipedia](https://en.wikipedia.org/wiki/Operating_system#Multitasking))
-
-- There are many [operating systems](https://en.wikipedia.org/wiki/Operating_system). ([List of operating systems](https://en.wikipedia.org/wiki/List_of_operating_systems))
-
-- I will pick [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) for my explanation.
-
-- Microsoft Windows supports preemptive multitasking, which creates the effect of simultaneous execution of multiple threads from multiple processes. ([About Processes and Threads](https://docs.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads))
-
-## [Multitasking](https://en.wikipedia.org/wiki/Computer_multitasking), [task](https://en.wikipedia.org/wiki/Task_(computing)), [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)
-
-The concept of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) makes it possible to have computer [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) with a single [central processing unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit).
-
-Most modern [operating systems](https://en.wikipedia.org/wiki/Operating_system) have [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [kernels](https://en.wikipedia.org/wiki/Kernel_(operating_system)), which are designed to permit [tasks](https://en.wikipedia.org/wiki/Task_(computing)) to be preempted even when in kernel mode. ([Preemption (computing), wikipedia](https://en.wikipedia.org/wiki/Preemption_(computing)))
-
-[Preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) allocates a processor [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) to each [thread](https://en.wikipedia.org/wiki/Thread_(computing)) it executes. ([Multitasking, ](https://docs.microsoft.com/en-us/windows/win32/procthread/multitasking))
-
-If your [operating systems](https://en.wikipedia.org/wiki/Operating_system) is [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows), it belongs [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking).
-
-### [Task](https://en.wikipedia.org/wiki/Task_(computing))
-
->A [task](https://en.wikipedia.org/wiki/Task_(computing)) is a unit of execution or a unit of work. The term is ambiguous; precise alternative terms include process, light-weight process, [thread (for execution)](https://en.wikipedia.org/wiki/Thread_(computing)), step, request, or query (for work). ([Task (computing), wikipedia](https://en.wikipedia.org/wiki/Task_(computing)))
-
-### [Time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)
-
->The period of time for which a process is allowed to run in a [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) system is generally called the [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) or quantum. ([Preemption (computing), wikipedia](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice))
 
 ## [Context switch](https://en.wikipedia.org/wiki/Context_switch), [protection ring](https://en.wikipedia.org/wiki/Protection_ring), [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
 
-![Kernel level multi-thread process model](https://d8it4huxumps7.cloudfront.net/uploads/images/621c698b9abab_kernel_level_multi_thread_process_model.jpg)
 ![Context_switch](https://www.bogotobogo.com/cplusplus/images/multithread/Context_switch.png)
-
-A change in the currently executing [task](https://en.wikipedia.org/wiki/Task_(computing)) of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) is known as [context switching](https://en.wikipedia.org/wiki/Context_switch). ([Preemption (computing), wikipedia](https://en.wikipedia.org/wiki/Preemption_(computing)))
 
 [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) are generally hardware-enforced by some [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) architectures that provide different [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) at the hardware or microcode level. ([Protection ring, wikipedia](https://en.wikipedia.org/wiki/Protection_ring))
 
@@ -806,7 +754,5 @@ The execution flow in core from timer interrupt is as follows.
 ### [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
 
 >[CPU modes](https://en.wikipedia.org/wiki/CPU_modes) (also called processor modes, CPU states, CPU privilege levels and other names) are operating modes for the [central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) of some computer architectures that place restrictions on the type and scope of operations that can be performed by certain processes being run by the CPU. ([CPU modes, wikipedia](https://en.wikipedia.org/wiki/CPU_modes))
-
-![CPU_core_thread](https://www.logicbig.com/quick-info/images/multithreading.png)
 
 # Written by ysoh880710
