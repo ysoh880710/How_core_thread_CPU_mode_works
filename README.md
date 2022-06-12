@@ -6,7 +6,22 @@
 
 - **Understanding of [operating system](https://en.wikipedia.org/wiki/Operating_system) is inevitable. So I will begin with a brief explanation of [operating system](https://en.wikipedia.org/wiki/Operating_system).**
 
-## What is [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+# Table of contents
+
+1. [Operating System](#1-operating-system)  
+1.1. [What is operating system?](#11-what-is-operating-system)  
+1.2. [What is kernel?](#12-what-is-kernel)  
+1.3. [What are the types of operating system?](#13-what-are-the-types-of-operating-system)  
+1.4. [What are the functions of operating system?](#14-what-are-the-functions-of-operating-system)  
+1.5. [Why does the definition, types, and functions of operating system vary?](#15-why-does-the-definition-types-and-functions-of-operating-system-vary)  
+1.6. [What is multi-tasking?](#16-what-is-multi-tasking)  
+1.7. [What is process management?](#17-what-is-process-management)  
+1.8. [What is process scheduling?](#18-what-is-process-scheduling)  
+1.9. [What are preemptive and non-preemptive process scheduling?](#19-what-are-preemptive-and-non-preemptive-process-scheduling)
+
+# 1. [Operating System](https://en.wikipedia.org/wiki/Operating_system)
+
+## 1.1. What is [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
 |<div align="center">![operating_system1](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Operating_system_placement.svg/165px-Operating_system_placement.svg.png)</div>|<div align="center">![operating_system2](https://www.tutorialspoint.com/operating_system/images/conceptual_view.jpg)</div>|
 |---|---|
@@ -33,7 +48,9 @@
 
 </details>
 
-## What is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))?
+###### [Table of contents](#table-of-contents)
+
+## 1.2. What is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))?
 
 <p align="center">
   <img src="https://miro.medium.com/max/1400/1*iuW845pwRhd49KEUYvzsmg.png">
@@ -49,7 +66,9 @@
 
 </details>
 
-## What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+###### [Table of contents](#table-of-contents)
+
+## 1.3. What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
 - **Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) (Time-Sharing)**
 - **Single-user and multi-user**
@@ -95,7 +114,9 @@
 
 </details>
 
-## What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+###### [Table of contents](#table-of-contents)
+
+## 1.4. What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
 - **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))**
 - **Memory management**
@@ -145,7 +166,9 @@
 
 </details>
 
-## Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
+###### [Table of contents](#table-of-contents)
+
+## 1.5. Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
 
 >In general, we have **no completely adequate definition of an [operating system](https://en.wikipedia.org/wiki/Operating_system)**.
 ><div align="right">5p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
@@ -156,7 +179,9 @@
 >It is **hard to pin down what an [operating system](https://en.wikipedia.org/wiki/Operating_system) is** other than saying it is the **software that runs in kernel mode**—and even that is not always true.
 ><div align="right">3p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
-## What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)?
+###### [Table of contents](#table-of-contents)
+
+## 1.6. What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)?
 
 <p align="center">
   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png">
@@ -180,7 +205,9 @@
 
 </details>
 
-## What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 1.7. What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
 
 - **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is managing [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, and communication.**
 
@@ -205,7 +232,9 @@
 
 </details>
 
-## What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+###### [Table of contents](#table-of-contents)
+
+## 1.8. What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://www.tutorialspoint.com/operating_system/images/queuing_diagram.jpg">
@@ -236,7 +265,9 @@
 
 </details>
 
-## What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [nonpreemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+###### [Table of contents](#table-of-contents)
+
+## 1.9. What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [non-preemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://prepinsta.com/wp-content/uploads/2019/03/Preemptive-Scheduling-vs-Non-Preemptive-Scheduling.png">
@@ -264,6 +295,8 @@
 ><div align="right">153p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
 
 </details>
+
+###### [Table of contents](#table-of-contents)
 
 ## What are the types of [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
@@ -554,7 +587,7 @@ Multiprocessor - Including multiple processors.
 >[Processor](https://en.wikipedia.org/wiki/Processor_(computing)) - Aphysical chip that contains one or more [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit).
 ><div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-- This seems wrong as far as not all [processors](https://en.wikipedia.org/wiki/Processor_(computing)) contain one or more [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit).
+- This seems wrong to me as far as not all [processors](https://en.wikipedia.org/wiki/Processor_(computing)) contain one or more [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit).
 
 </details>
 
