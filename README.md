@@ -416,9 +416,8 @@
 
 ## What is [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
 
-<p align="center">
-  <img src="thread_scheduling.png">
-</p>
+|<div align="center">![thread_scheduling](thread_scheduling.png)</div>|<div align="center">![Scheduling](http://beyondthegeek.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-29-at-12.39.17-AM-500x484.png)</div>|
+|---|---|
 
 - **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) is selecting an available [thread](https://en.wikipedia.org/wiki/Thread_(computing)) which will be executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.**
 
@@ -710,7 +709,17 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-![Scheduling](http://beyondthegeek.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-29-at-12.39.17-AM-500x484.png)
+## What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
+
+<details>
+<summary>References</summary>
+
+>[CPU modes](https://en.wikipedia.org/wiki/CPU_modes) (also called processor modes, CPU states, CPU privilege levels and other names) are operating modes for the [central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) of some computer architectures that place restrictions on the type and scope of operations that can be performed by certain [processes](https://en.wikipedia.org/wiki/Process_(computing)) being run by the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+><div align="right">https://en.wikipedia.org/wiki/CPU_modes</div>
+
+</details>
+
+## What is [protection ring](https://en.wikipedia.org/wiki/Protection_ring)?
 
 ## [Context switch](https://en.wikipedia.org/wiki/Context_switch), [protection ring](https://en.wikipedia.org/wiki/Protection_ring), [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
 
