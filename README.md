@@ -742,6 +742,76 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
+## What is protection?
+
+- Protection is controlling the access of [processes](https://en.wikipedia.org/wiki/Process_(computing)) and users to the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) defined by a [computer](https://en.wikipedia.org/wiki/Computer) [system](https://en.wikipedia.org/wiki/System).
+
+<details>
+<summary>References</summary>
+
+>In this chapter, we turn to protection, which involves controlling the access of [processes](https://en.wikipedia.org/wiki/Process_(computing)) and users to the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) defined by a [computer](https://en.wikipedia.org/wiki/Computer) [system](https://en.wikipedia.org/wiki/System).
+><div align="right">667p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What are the reasons why protection is needed?
+
+1. To prevent a [violation of access restriction](https://en.wikipedia.org/wiki/Segmentation_fault) by a user.
+2. To ensure each [process](https://en.wikipedia.org/wiki/Process_(computing)) in a [system](https://en.wikipedia.org/wiki/System) uses [system resources](https://en.wikipedia.org/wiki/System_resource) only in ways consistent with stated [policies](https://en.wikipedia.org/wiki/Computer_security_policy).
+
+<details>
+<summary>References</summary>
+
+>The most obvious is the need to prevent the mischievous, intentional [violation of an access restriction](https://en.wikipedia.org/wiki/Segmentation_fault) by a user. Of more general importance, however, is the need to ensure that each [process](https://en.wikipedia.org/wiki/Process_(computing)) in a [system](https://en.wikipedia.org/wiki/System) uses [system resources](https://en.wikipedia.org/wiki/System_resource) only in ways consistent with stated [policies](https://en.wikipedia.org/wiki/Computer_security_policy).
+><div align="right">668p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What is [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
+
+- 
+
+<details>
+<summary>References</summary>
+
+>In computer programming and computer security, privilege separation is a technique in which a program is divided into parts which are limited to the specific privileges they require in order to perform a specific task.
+><div align="right">https://en.wikipedia.org/wiki/Privilege_separation</div>
+
+</details>
+
+## What are examples of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
+
+- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring)
+
+<details>
+<summary>References</summary>
+
+>A popular model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) is that of [protection rings](https://en.wikipedia.org/wiki/Protection_ring).
+><div align="right">669p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What is [protection rings](https://en.wikipedia.org/wiki/Protection_ring)?
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg">
+</p>
+
+- [Protection rings] is a model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) which privileges being separated to rings, which the innermost ring (ring 0) has the full set of privileges and each outer ring has a subset of functionality of its inner ring.
+
+<details>
+<summary>References</summary>
+
+>In computer science, hierarchical protection domains, often called [protection rings](https://en.wikipedia.org/wiki/Protection_ring), are mechanisms to protect data and functionality from faults (by improving fault tolerance) and malicious behavior (by providing computer security).
+><div align="right">https://en.wikipedia.org/wiki/Protection_ring</div>
+
+>As we’ve seen, the main component of modern operating systems is the kernel, which manages access to system resources and hardware. The kernel, by definition, is a trusted and privileged component and therefore must run with a higher level of privileges than user processes. To carry out this privilege separation, hardware support is required. Indeed, all modern hardware supports the notion of separate execution levels, though implementations vary somewhat. A popular model of privilege separation is that of [protection rings](https://en.wikipedia.org/wiki/Protection_ring). In this model, fashioned after Bell –LaPadula (https://www.acsac.org/2005/papers/Bell.pdf), execution is defined as a set of concentric rings, with ring i providing a subset of the functionality of ring j for any j < i. The innermost ring, ring 0, thus provides the full set of privileges. This pattern is shown in Figure 17.1.
+><div align="right">669p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>protection rings - A model of privilege separation consisting of a series of rings, with each successive ring representing greater execution privileges.
+
+</details>
+
 ## What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
 
 <details>
