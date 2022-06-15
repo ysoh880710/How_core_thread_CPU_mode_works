@@ -752,9 +752,12 @@ Multiprocessor - Including multiple processors.
 >In this chapter, we turn to protection, which involves controlling the access of [processes](https://en.wikipedia.org/wiki/Process_(computing)) and users to the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) defined by a [computer](https://en.wikipedia.org/wiki/Computer) [system](https://en.wikipedia.org/wiki/System).
 ><div align="right">667p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
+>protection : A category of [system calls](https://en.wikipedia.org/wiki/System_call). Any mechanism for controlling the access of [processes](https://en.wikipedia.org/wiki/Process_(computing)) or users to the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) defined by a [computer](https://en.wikipedia.org/wiki/Computer) [system](https://en.wikipedia.org/wiki/System).
+><div align="right">G-28p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
 </details>
 
-## What are the reasons why protection is needed?
+## Why is protection needed?
 
 1. To prevent a [violation of access restriction](https://en.wikipedia.org/wiki/Segmentation_fault) by a user.
 2. To ensure each [process](https://en.wikipedia.org/wiki/Process_(computing)) in a [system](https://en.wikipedia.org/wiki/System) uses [system resources](https://en.wikipedia.org/wiki/System_resource) only in ways consistent with stated [policies](https://en.wikipedia.org/wiki/Computer_security_policy).
@@ -769,17 +772,20 @@ Multiprocessor - Including multiple processors.
 
 ## What is [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
 
-- 
+- [Privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) is separation of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) required to perform a specific [task](https://en.wikipedia.org/wiki/Task_(computing)).
 
 <details>
 <summary>References</summary>
 
->In computer programming and computer security, privilege separation is a technique in which a program is divided into parts which are limited to the specific privileges they require in order to perform a specific task.
+>In [computer](https://en.wikipedia.org/wiki/Computer) [programming](https://en.wikipedia.org/wiki/Computer_programming) and [computer](https://en.wikipedia.org/wiki/Computer) security, [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) is a technique in which a program is divided into parts which are limited to the specific [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) they require in order to perform a specific [task](https://en.wikipedia.org/wiki/Task_(computing)).
 ><div align="right">https://en.wikipedia.org/wiki/Privilege_separation</div>
+
+>As we’ve seen, the main component of modern [operating systems](https://en.wikipedia.org/wiki/Operating_system) is the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), which manages access to [system resources](https://en.wikipedia.org/wiki/System_resource) and [hardware](https://en.wikipedia.org/wiki/Computer_hardware). The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)), by definition, is a trusted and privileged component and therefore must run with a higher level of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) than user [processes](https://en.wikipedia.org/wiki/Process_(computing)). To carry out this [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation), [hardware](https://en.wikipedia.org/wiki/Computer_hardware) support is required.
+><div align="right">669p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 </details>
 
-## What are examples of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
+## What are the examples of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
 
 - [Protection rings](https://en.wikipedia.org/wiki/Protection_ring)
 
@@ -797,7 +803,7 @@ Multiprocessor - Including multiple processors.
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg">
 </p>
 
-- [Protection rings] is a model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) which privileges being separated to rings, which the innermost ring (ring 0) has the full set of privileges and each outer ring has a subset of functionality of its inner ring.
+- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) is a model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) which [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) being separated to rings, which the innermost ring (ring 0) has the full set of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) and each outer ring has a subset of functionality of its inner ring.
 
 <details>
 <summary>References</summary>
@@ -805,14 +811,35 @@ Multiprocessor - Including multiple processors.
 >In computer science, hierarchical protection domains, often called [protection rings](https://en.wikipedia.org/wiki/Protection_ring), are mechanisms to protect data and functionality from faults (by improving fault tolerance) and malicious behavior (by providing computer security).
 ><div align="right">https://en.wikipedia.org/wiki/Protection_ring</div>
 
->As we’ve seen, the main component of modern operating systems is the kernel, which manages access to system resources and hardware. The kernel, by definition, is a trusted and privileged component and therefore must run with a higher level of privileges than user processes. To carry out this privilege separation, hardware support is required. Indeed, all modern hardware supports the notion of separate execution levels, though implementations vary somewhat. A popular model of privilege separation is that of [protection rings](https://en.wikipedia.org/wiki/Protection_ring). In this model, fashioned after Bell –LaPadula (https://www.acsac.org/2005/papers/Bell.pdf), execution is defined as a set of concentric rings, with ring i providing a subset of the functionality of ring j for any j < i. The innermost ring, ring 0, thus provides the full set of privileges. This pattern is shown in Figure 17.1.
+>A popular model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) is that of [protection rings](https://en.wikipedia.org/wiki/Protection_ring). In this model, fashioned after Bell –LaPadula (https://www.acsac.org/2005/papers/Bell.pdf), execution is defined as a set of concentric rings, with ring i providing a subset of the functionality of ring j for any j < i. The innermost ring, ring 0, thus provides the full set of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)).
 ><div align="right">669p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
->protection rings - A model of privilege separation consisting of a series of rings, with each successive ring representing greater execution privileges.
+>[protection rings](https://en.wikipedia.org/wiki/Protection_ring) : A model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) consisting of a series of rings, with each successive ring representing greater execution [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)).
+><div align="right">G-28p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## How is [protection rings](https://en.wikipedia.org/wiki/Protection_ring) carried out?
+
+- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) is generally carried out by [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) provided by [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) at the [hardware](https://en.wikipedia.org/wiki/Computer_hardware) level.
+
+<details>
+<summary>References</summary>
+
+>A [protection ring](https://en.wikipedia.org/wiki/Protection_ring) is one of two or more hierarchical levels or layers of [privilege](https://en.wikipedia.org/wiki/Privilege_(computing)) within the architecture of a [computer](https://en.wikipedia.org/wiki/Computer) [system](https://en.wikipedia.org/wiki/System). This is generally [hardware](https://en.wikipedia.org/wiki/Computer_hardware)-enforced by some [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) architectures that provide different [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) at the [hardware](https://en.wikipedia.org/wiki/Computer_hardware) or microcode level.
+><div align="right">https://en.wikipedia.org/wiki/Protection_ring</div>
+
+>To carry out this privilege separation, hardware support is required. Indeed, all modern hardware supports the notion of separate execution levels, though implementations vary somewhat.
+><div align="right">669p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>[Intel](https://en.wikipedia.org/wiki/Intel) architectures follow this model, placing [user mode](https://en.wikipedia.org/wiki/User_space_and_kernel_space) code in ring 3 and [kernel mode](https://en.wikipedia.org/wiki/User_space_and_kernel_space) code in ring 0.
+><div align="right">670p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 </details>
 
 ## What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
+
+- [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) are operating modes of some [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit) that place restrictions on the type and scope of operations that can be performed by certain [processes](https://en.wikipedia.org/wiki/Process_(computing)) being run by the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 
 <details>
 <summary>References</summary>
@@ -821,8 +848,6 @@ Multiprocessor - Including multiple processors.
 ><div align="right">https://en.wikipedia.org/wiki/CPU_modes</div>
 
 </details>
-
-## What is [protection ring](https://en.wikipedia.org/wiki/Protection_ring)?
 
 ## [Context switch](https://en.wikipedia.org/wiki/Context_switch), [protection ring](https://en.wikipedia.org/wiki/Protection_ring), [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
 
