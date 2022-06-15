@@ -335,32 +335,6 @@
 >Some [operating systems](https://en.wikipedia.org/wiki/Operating_system) have an intermediate form of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)), known as swapping, whose key idea is that sometimes it can be advantageous to remove a [process](https://en.wikipedia.org/wiki/Process_(computing)) from memory (and from active contention for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)) and thus reduce the degree of multiprogramming. Later, the [process](https://en.wikipedia.org/wiki/Process_(computing)) can be reintroduced into memory, and its execution can be continued where it left off. This scheme is known as swapping because a [process](https://en.wikipedia.org/wiki/Process_(computing)) can be “swapped out” from memory to disk, where its current status is saved, and later “swapped in” from disk back to memory, where its status is restored.
 ><div align="right">113p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-### [Time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)
-
->The period of time for which a process is allowed to run in a [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)) [multitasking](https://en.wikipedia.org/wiki/Computer_multitasking) system is generally called the [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) or quantum. ([Preemption (computing), wikipedia](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice))
-
-</details>
-
-## What is [context switch](https://en.wikipedia.org/wiki/Context_switch)?
-
-<p align="center">
-  <img src="https://i.stack.imgur.com/6h1xc.png">
-</p>
-
-- **[Context switch](https://en.wikipedia.org/wiki/Context_switch) is storing the state of current [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and restoring the state of different [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
-
-<details>
-<summary>References</summary>
-
->This preemptive scheduler usually runs in the most privileged protection ring, meaning that interruption and resuming are considered highly secure actions. Such a change in the currently executing task of a processor is known as context switching.
-><div align="right">https://en.wikipedia.org/wiki/Preemption_(computing)</div>
-
->In computing, a [context switch](https://en.wikipedia.org/wiki/Context_switch) is the process of storing the state of a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)), so that it can be restored and resume execution at a later point.
-><div align="right">https://en.wikipedia.org/wiki/Context_switch</div>
-
->Switching the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to another [process](https://en.wikipedia.org/wiki/Process_(computing)) requires performing a state save of the current [process](https://en.wikipedia.org/wiki/Process_(computing)) and a state restore of a different [process](https://en.wikipedia.org/wiki/Process_(computing)). This task is known as a [context switch](https://en.wikipedia.org/wiki/Context_switch).
-><div align="right">114p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
 </details>
 
 ## What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
@@ -849,11 +823,48 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## [Context switch](https://en.wikipedia.org/wiki/Context_switch), [protection ring](https://en.wikipedia.org/wiki/Protection_ring), [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
+## What is [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)?
 
-![Context_switch](https://www.bogotobogo.com/cplusplus/images/multithread/Context_switch.png)
+<p align="center">
+  <img src="https://www.guru99.com/images/1/082319_0623_CPUCoreMult1.png">
+</p>
 
-[Protection rings](https://en.wikipedia.org/wiki/Protection_ring) are generally hardware-enforced by some [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) architectures that provide different [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) at the hardware or microcode level. ([Protection ring, wikipedia](https://en.wikipedia.org/wiki/Protection_ring))
+- [Time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice), also called quantum, is a unit of time interval allowed for [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) to run each [task](https://en.wikipedia.org/wiki/Task_(computing)).
+
+<details>
+<summary>References</summary>
+
+>The period of time for which a process is allowed to run in a preemptive multitasking system is generally called the time slice or quantum.
+><div align="right">https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice</div>
+
+>time quantum : A small unit of time used by scheduling algorithms as a basis for determining when to preempt a thread from the CPU to allow another to run.
+><div align="right">G-37p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>Each process is assigned a time interval, called its quantum, during which it is allowed to run.
+><div align="right">158p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+## What is [context switch](https://en.wikipedia.org/wiki/Context_switch)?
+
+|<div align="center">![context_switch1](https://i.stack.imgur.com/6h1xc.png)</div>|<div align="center">![context_switch2](https://www.bogotobogo.com/cplusplus/images/multithread/Context_switch.png)</div>|
+|---|---|
+
+- [Context switch](https://en.wikipedia.org/wiki/Context_switch) is storing the state of current [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and restoring the state of different [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)).
+
+<details>
+<summary>References</summary>
+
+>This preemptive scheduler usually runs in the most privileged protection ring, meaning that interruption and resuming are considered highly secure actions. Such a change in the currently executing task of a processor is known as context switching.
+><div align="right">https://en.wikipedia.org/wiki/Preemption_(computing)</div>
+
+>In computing, a [context switch](https://en.wikipedia.org/wiki/Context_switch) is the process of storing the state of a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)), so that it can be restored and resume execution at a later point.
+><div align="right">https://en.wikipedia.org/wiki/Context_switch</div>
+
+>Switching the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to another [process](https://en.wikipedia.org/wiki/Process_(computing)) requires performing a state save of the current [process](https://en.wikipedia.org/wiki/Process_(computing)) and a state restore of a different [process](https://en.wikipedia.org/wiki/Process_(computing)). This task is known as a [context switch](https://en.wikipedia.org/wiki/Context_switch).
+><div align="right">114p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
 
 Many modern [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) architectures (including the popular Intel x86 architecture) include some form of ring protection, although the [Windows NT](https://en.wikipedia.org/wiki/Windows_NT) [operating system](https://en.wikipedia.org/wiki/Operating_system), like Unix, does not fully utilize this feature. OS/2 does to some extent, using three rings: ring 0 for kernel code and device drivers, ring 2 for privileged code (user programs with I/O access permissions), and ring 3 for unprivileged code (nearly all user programs). ([Protection ring, wikipedia](https://en.wikipedia.org/wiki/Protection_ring))
 
