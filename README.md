@@ -814,12 +814,57 @@ Multiprocessor - Including multiple processors.
 ## What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
 
 - [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) are operating modes of some [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit) that place restrictions on the type and scope of operations that can be performed by certain [processes](https://en.wikipedia.org/wiki/Process_(computing)) being run by the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+- Kernel mode is
 
 <details>
 <summary>References</summary>
 
 >[CPU modes](https://en.wikipedia.org/wiki/CPU_modes) (also called processor modes, CPU states, CPU privilege levels and other names) are operating modes for the [central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) of some computer architectures that place restrictions on the type and scope of operations that can be performed by certain [processes](https://en.wikipedia.org/wiki/Process_(computing)) being run by the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 ><div align="right">https://en.wikipedia.org/wiki/CPU_modes</div>
+
+</details>
+
+## What are the types of [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
+
+- Kernel mode
+- User mode
+
+<details>
+<summary>References</summary>
+
+>The unrestricted mode is often called kernel mode, but many other designations exist (master mode, supervisor mode, privileged mode, etc.). Restricted modes are usually referred to as user modes, but are also known by many other names (slave mode, problem state, etc.).
+><div align="right">https://en.wikipedia.org/wiki/CPU_modes#Mode_types</div>
+
+</details>
+
+## What are kernel mode and user mode?
+
+- Kernel mode, also called supervisor mode, system mode, or privileged mode, is a [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) which all [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), including priviliged instructions, are enabled.
+- User mode is a [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) which some [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are limited or not allowed.
+
+<details>
+<summary>References</summary>
+
+>At the very least, we need two separate modes of operation: user mode and kernel mode (also called supervisor mode, system mode, or privileged mode).
+><div align="right">24p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>kernel mode : A [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) in which all [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are enabled. The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) runs in this mode.
+><div align="right">G-18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>user mode : A [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) for executing user processes in which some [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are limited or not allowed.
+><div align="right">G-38p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What are privileged instructions?
+
+- Privileged instructions are instructions that can execute only if the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is in in kernel mode.
+
+<details>
+<summary>References</summary>
+
+>privileged instructions : Instructions that can execute only if the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is in in kernel mode.
+><div align="right">G-27p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 </details>
 
@@ -866,6 +911,25 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
+## What are voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) and non-voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch)?
+
+- Voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) is the [context switch](https://en.wikipedia.org/wiki/Context_switch) when a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) gives up being executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+- Non-voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) is the [context switch](https://en.wikipedia.org/wiki/Context_switch) when a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) being executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is taken away.
+
+<details>
+<summary>References</summary>
+
+>A voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) occurs when a [process](https://en.wikipedia.org/wiki/Process_(computing)) has given up control of the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) because it requires a [resource](https://en.wikipedia.org/wiki/Resource#Computer_resources) that is currently unavailable (such as blocking for I/O.) A nonvoluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) occurs when the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) has been taken away from a [process](https://en.wikipedia.org/wiki/Process_(computing)), such as when its [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice) has expired or it has been preempted by a higher-priority [process](https://en.wikipedia.org/wiki/Process_(computing)).
+><div align="right">204p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+## What is happening under the hood when a kernel managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) contains user mode code?
+
+Anotherway of ending up in a more privileged ring is on the occurrence of
+a processor trap or an interrupt.When either occurs, execution is immediately
+transferred into the higher-privilege ring.
+
 Many modern [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) architectures (including the popular Intel x86 architecture) include some form of ring protection, although the [Windows NT](https://en.wikipedia.org/wiki/Windows_NT) [operating system](https://en.wikipedia.org/wiki/Operating_system), like Unix, does not fully utilize this feature. OS/2 does to some extent, using three rings: ring 0 for kernel code and device drivers, ring 2 for privileged code (user programs with I/O access permissions), and ring 3 for unprivileged code (nearly all user programs). ([Protection ring, wikipedia](https://en.wikipedia.org/wiki/Protection_ring))
 
 **[Context switches](https://en.wikipedia.org/wiki/Context_switch) can occur only in [kernel mode](https://en.wikipedia.org/wiki/CPU_modes)**. ([Context Switch Definition, linfo](http://www.linfo.org/context_switch.html))
@@ -893,14 +957,9 @@ The execution flow in core from timer interrupt is as follows.
 
 >A [context switch](https://en.wikipedia.org/wiki/Context_switch) (also sometimes referred to as a process switch or a task switch) is the switching of the [CPU (central processing unit)](https://en.wikipedia.org/wiki/Central_processing_unit) from one process or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to another. ([Context Switch Definition, linfo](http://www.linfo.org/context_switch.html))
 
->A [context switch](https://en.wikipedia.org/wiki/Context_switch) is the process of storing the state of a process or [thread](https://en.wikipedia.org/wiki/Thread_(computing)), so that it can be restored and resume execution at a later point. ([Context switch, wikipedia](https://en.wikipedia.org/wiki/Context_switch))
-
-### [Protection rings](https://en.wikipedia.org/wiki/Protection_ring)
-
->[Protection rings](https://en.wikipedia.org/wiki/Protection_ring) are mechanisms to protect data and functionality from faults (by improving fault tolerance) and malicious behavior (by providing computer security). ([Protection ring, wikipedia](https://en.wikipedia.org/wiki/Protection_ring))
-
-### [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)
-
->[CPU modes](https://en.wikipedia.org/wiki/CPU_modes) (also called processor modes, CPU states, CPU privilege levels and other names) are operating modes for the [central processing unit](https://en.wikipedia.org/wiki/Central_processing_unit) of some computer architectures that place restrictions on the type and scope of operations that can be performed by certain processes being run by the CPU. ([CPU modes, wikipedia](https://en.wikipedia.org/wiki/CPU_modes))
+When a process is in kernel mode, it can execute privileged
+instructions and thus gain complete control of the computer system. In contrast,
+when a process executes in user mode, it can invoke only nonprivileged
+instructions.
 
 # Written by ysoh880710
