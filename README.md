@@ -1,6 +1,6 @@
 # How [threads](https://en.wikipedia.org/wiki/Thread_(computing)) works
 
-- **I will try to minimize the number of topics, or avoid mentioning related topics if I can explain without them, because more topics make more difficult to understand.**
+- **I will try to minimize the number of topics, or avoid mentioning some related topics if I can explain without them, because more topics make more difficult to understand.**
 
 - **I will try to summarize each topic in my word as simple as possible. However, please correct me if it is wrong.**
 
@@ -15,9 +15,16 @@
 1.4. [What are the functions of operating system?](#14-what-are-the-functions-of-operating-system)  
 1.5. [Why does the definition, types, and functions of operating system vary?](#15-why-does-the-definition-types-and-functions-of-operating-system-vary)  
 1.6. [What is multi-tasking?](#16-what-is-multi-tasking)  
-1.7. [What is process management?](#17-what-is-process-management)  
-1.8. [What is process scheduling?](#18-what-is-process-scheduling)  
-1.9. [What are preemptive and non-preemptive process scheduling?](#19-what-are-preemptive-and-non-preemptive-process-scheduling)
+2. [Process Management]()  
+2.1. [What is process management?](#17-what-is-process-management)  
+2.2. [What is process scheduling?](#18-what-is-process-scheduling)  
+2.3. [What are preemptive and non-preemptive process scheduling?](#19-what-are-preemptive-and-non-preemptive-process-scheduling)
+2.4. [What are the types of process scheduling?]()
+3. [Hardware]()
+4. [Instruction]
+5. [Protection]()
+6. [Context switch]()
+7. [How does a kernel managed thread containing user mode code work?]
 
 # 1. [Operating System](https://en.wikipedia.org/wiki/Operating_system)
 
@@ -207,7 +214,9 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.7. What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
+# 2. [Process Management](https://en.wikipedia.org/wiki/Process_management_(computing))
+
+## 2.1. What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
 
 - **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is managing [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, and communication.**
 
@@ -234,7 +243,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.8. What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+## 2.2. What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://www.tutorialspoint.com/operating_system/images/queuing_diagram.jpg">
@@ -267,7 +276,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.9. What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [non-preemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+## 2.3. What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [non-preemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://prepinsta.com/wp-content/uploads/2019/03/Preemptive-Scheduling-vs-Non-Preemptive-Scheduling.png">
@@ -298,7 +307,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## What are the types of [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+## 2.4. What are the types of [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://www.guru99.com/images/1/122319_0900_ProcessSche1.png">
@@ -337,7 +346,9 @@
 
 </details>
 
-## What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 2.5. What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
 
 <p align="center">
   <img src="process.png">
@@ -367,7 +378,9 @@
 
 </details>
 
-## What is [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 2.6. What is [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
 
 <p align="center">
   <img src="process_vs_thread.png">
@@ -402,7 +415,9 @@
 
 </details>
 
-## How do [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
+###### [Table of contents](#table-of-contents)
+
+## 2.7. How do [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
 
 - **A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.**
 - **From memory perspective, [process](https://en.wikipedia.org/wiki/Process_(computing)) includes code, data, BSS, heap, and [threads](https://en.wikipedia.org/wiki/Thread_(computing)), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) includes stack and register.**
@@ -421,7 +436,9 @@
 
 </details>
 
-## What is [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 2.8. What is [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
 
 |<div align="center">![thread_scheduling](thread_scheduling.png)</div>|<div align="center">![Scheduling](http://beyondthegeek.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-29-at-12.39.17-AM-500x484.png)</div>|
 |---|---|
@@ -439,13 +456,17 @@
 
 </details>
 
-## What are the types of [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 2.9. What are the types of [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
 
 - **Selecting an available [thread](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). This is also called [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
 - **Selecting a [thread](https://en.wikipedia.org/wiki/Process_(computing)) in a ready queue and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core. This is also called [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)). Also, this [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) involves [context switch](https://en.wikipedia.org/wiki/Context_switch).**
 - **Removing a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) from memory to disk, which is called swap out, in order to reduce the degree of multiprogramming, and restoring the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) from disk to memory, which is called swap in. This is called [medium-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Medium-term_scheduling) or swapping.**
 
-## How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) differ?
+###### [Table of contents](#table-of-contents)
+
+## 2.10. How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) differ?
 
 <p align="center">
   <img src="process_scheduling_vs_thread_scheduling.png">
@@ -478,7 +499,9 @@
 
 </details>
 
-## What are [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 2.11. What are [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
 
 <p align="center">
   <img src="thread_model.png">
@@ -498,7 +521,9 @@
 
 </details>
 
-## What is the mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why is it needed?
+###### [Table of contents](#table-of-contents)
+
+## 2.12. What is the mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why is it needed?
 
 - **The mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) executing [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
 - **The reason why mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is needed is [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) cannot run on its own. [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) that are being scheduled for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system).**
@@ -529,7 +554,11 @@ Multicore - Including multiple computing cores on the same CPU.
 Multiprocessor - Including multiple processors.
 <div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
-## What is [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)?
+###### [Table of contents](#table-of-contents)
+
+# 3. [Hardware](https://en.wikipedia.org/wiki/Computer_hardware)
+
+## 3.1. What is [computer hardware](https://en.wikipedia.org/wiki/Computer_hardware)?
 
 <p align="center">
   <img src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/176067216_1813918015455920_2474979289003788370_n.jpg?stp=cp0_dst-jpg_e15_q65_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=110474&_nc_ohc=H8i6zv687LUAX9p3zZu&_nc_ht=scontent-gmp1-1.xx&oh=00_AT8-8th1QddD70eFq1w9WqrgTgDP9ZnV0LlovbidhYv_bA&oe=62B83238">
@@ -548,7 +577,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [processor](https://en.wikipedia.org/wiki/Processor_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 3.2. What is [processor](https://en.wikipedia.org/wiki/Processor_(computing))?
 
 - **A [processor](https://en.wikipedia.org/wiki/Processor_(computing)) is an electrical component that performs operations on an external data source, such as [memory](https://en.wikipedia.org/wiki/Computer_memory).**
 
@@ -565,12 +596,16 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are the types of [processors](https://en.wikipedia.org/wiki/Processor_(computing))?
+###### [Table of contents](#table-of-contents)
+
+## 3.3. What are the types of [processors](https://en.wikipedia.org/wiki/Processor_(computing))?
 
 - [Central Processing Unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit)
 - [Graphics Processing Unit (GPU)](https://en.wikipedia.org/wiki/Graphics_processing_unit)
 
-## What is [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)?
+###### [Table of contents](#table-of-contents)
+
+## 3.4. What is [CPU](https://en.wikipedia.org/wiki/Central_processing_unit)?
 
 |![Intel](https://assets.hardwarezone.com/img/2021/11/Corei9_02.jpg)|![AMD](https://cdn.mos.cms.futurecdn.net/mnzNfoMcmVXme8vxENcyjm-970-80.jpg)|
 |---|---|
@@ -589,7 +624,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)?
+###### [Table of contents](#table-of-contents)
+
+## 3.5. What is [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)?
 
 <p align="center">
   <img src="https://www.logicbig.com/quick-info/images/multithreading.png">
@@ -611,7 +648,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is core?
+###### [Table of contents](#table-of-contents)
+
+## 3.6. What is core?
 
 >**A core is the basic computation unit, which executes instructions, of the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).**
 
@@ -629,7 +668,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## How do [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core differ?
+###### [Table of contents](#table-of-contents)
+
+## 3.7. How do [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core differ?
 
 |<div align="center">![CPU diagram](https://media.geeksforgeeks.org/wp-content/uploads/20210605182444/CPUblock-660x495.jpg)</div>|<div align="center">![Multi-core CPU diagram](https://www.baeldung.com/wp-content/uploads/sites/4/2021/11/CPU.png)</div>|
 |---|---|
@@ -661,7 +702,11 @@ Multiprocessor - Including multiple processors.
 
 - **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are different from perspective of a [multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor) as a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit). [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and core are same from perspective of the definition of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).**
 
-## What is [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))?
+###### [Table of contents](#table-of-contents)
+
+# 4. [Instruction]()
+
+## 4.1. What is [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))?
 
 - **An [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) is a single operation of a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) defined by the [processor](https://en.wikipedia.org/wiki/Processor_(computing)) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).**
 
@@ -673,7 +718,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [instruction set](https://simple.wikipedia.org/wiki/Instruction_set)?
+###### [Table of contents](#table-of-contents)
+
+## 4.2. What is [instruction set](https://simple.wikipedia.org/wiki/Instruction_set)?
 
 - **An [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) is a list of all the [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) that a [processor](https://en.wikipedia.org/wiki/Processor_(computing)) can execute.**
 
@@ -690,7 +737,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [x86](https://en.wikipedia.org/wiki/X86)?
+###### [Table of contents](#table-of-contents)
+
+## 4.3. What is [x86](https://en.wikipedia.org/wiki/X86)?
 
 - **[x86](https://en.wikipedia.org/wiki/X86) is a family of [complex instruction set computer (CISC)](https://en.wikipedia.org/wiki/Complex_instruction_set_computer) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set) architectures initially developed by Intel based on the Intel 8086 microprocessor and its 8088 variant.**
 
@@ -702,7 +751,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [x86-64](https://en.wikipedia.org/wiki/X86-64)?
+###### [Table of contents](#table-of-contents)
+
+## 4.4. What is [x86-64](https://en.wikipedia.org/wiki/X86-64)?
 
 - **[x86-64](https://en.wikipedia.org/wiki/X86-64) is a 64-bit version of the [x86](https://en.wikipedia.org/wiki/X86) [instruction set](https://simple.wikipedia.org/wiki/Instruction_set).**
 
@@ -716,7 +767,11 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is protection?
+###### [Table of contents](#table-of-contents)
+
+# 5. Protection
+
+## 5.1. What is protection?
 
 - Protection is controlling the access of [processes](https://en.wikipedia.org/wiki/Process_(computing)) and users to the [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) defined by a [computer](https://en.wikipedia.org/wiki/Computer) [system](https://en.wikipedia.org/wiki/System).
 
@@ -731,7 +786,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## Why is protection needed?
+###### [Table of contents](#table-of-contents)
+
+## 5.2. Why is protection needed?
 
 1. To prevent a [violation of access restriction](https://en.wikipedia.org/wiki/Segmentation_fault) by a user.
 2. To ensure each [process](https://en.wikipedia.org/wiki/Process_(computing)) in a [system](https://en.wikipedia.org/wiki/System) uses [system resources](https://en.wikipedia.org/wiki/System_resource) only in ways consistent with stated [policies](https://en.wikipedia.org/wiki/Computer_security_policy).
@@ -744,7 +801,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
+###### [Table of contents](#table-of-contents)
+
+## 5.3. What is [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
 
 - [Privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) is separation of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) required to perform a specific [task](https://en.wikipedia.org/wiki/Task_(computing)).
 
@@ -759,7 +818,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are the examples of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
+###### [Table of contents](#table-of-contents)
+
+## 5.4. What are the examples of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation)?
 
 - [Protection rings](https://en.wikipedia.org/wiki/Protection_ring)
 
@@ -771,7 +832,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [protection rings](https://en.wikipedia.org/wiki/Protection_ring)?
+###### [Table of contents](#table-of-contents)
+
+## 5.5. What is [protection rings](https://en.wikipedia.org/wiki/Protection_ring)?
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg">
@@ -793,7 +856,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## How is [protection rings](https://en.wikipedia.org/wiki/Protection_ring) carried out?
+###### [Table of contents](#table-of-contents)
+
+## 5.6. How is [protection rings](https://en.wikipedia.org/wiki/Protection_ring) carried out?
 
 - [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) is generally carried out by [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) provided by [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) at the [hardware](https://en.wikipedia.org/wiki/Computer_hardware) level.
 
@@ -811,7 +876,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
+###### [Table of contents](#table-of-contents)
+
+## 5.7. What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
 
 - [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) are operating modes of some [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit) that place restrictions on the type and scope of operations that can be performed by certain [processes](https://en.wikipedia.org/wiki/Process_(computing)) being run by the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 - Kernel mode is
@@ -824,7 +891,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are the types of [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
+###### [Table of contents](#table-of-contents)
+
+## 5.8. What are the types of [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
 
 - Kernel mode
 - User mode
@@ -837,7 +906,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are kernel mode and user mode?
+###### [Table of contents](#table-of-contents)
+
+## 5.9. What are kernel mode and user mode?
 
 - Kernel mode, also called supervisor mode, system mode, or privileged mode, is a [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) which all [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), including priviliged instructions, are enabled.
 - User mode is a [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) which some [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) are limited or not allowed.
@@ -856,7 +927,7 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are privileged instructions?
+## 5.10. What are privileged instructions?
 
 - Privileged instructions are instructions that can execute only if the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is in in kernel mode.
 
@@ -868,7 +939,11 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)?
+###### [Table of contents](#table-of-contents)
+
+# 6. [Context Switch]()
+
+## 6.1. What is [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)?
 
 <p align="center">
   <img src="https://www.guru99.com/images/1/082319_0623_CPUCoreMult1.png">
@@ -890,7 +965,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is [context switch](https://en.wikipedia.org/wiki/Context_switch)?
+###### [Table of contents](#table-of-contents)
+
+## 6.2. What is [context switch](https://en.wikipedia.org/wiki/Context_switch)?
 
 |<div align="center">![context_switch1](https://i.stack.imgur.com/6h1xc.png)</div>|<div align="center">![context_switch2](https://www.bogotobogo.com/cplusplus/images/multithread/Context_switch.png)</div>|
 |---|---|
@@ -911,7 +988,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What are voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) and non-voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch)?
+###### [Table of contents](#table-of-contents)
+
+## 6.3. What are voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) and non-voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch)?
 
 - Voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) is the [context switch](https://en.wikipedia.org/wiki/Context_switch) when a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) gives up being executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 - Non-voluntary [context switch](https://en.wikipedia.org/wiki/Context_switch) is the [context switch](https://en.wikipedia.org/wiki/Context_switch) when a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) being executed on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is taken away.
@@ -924,7 +1003,9 @@ Multiprocessor - Including multiple processors.
 
 </details>
 
-## What is happening under the hood when a kernel managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) contains user mode code?
+###### [Table of contents](#table-of-contents)
+
+## 7. How does a kernel managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) containing user mode code work?
 
 Anotherway of ending up in a more privileged ring is on the occurrence of
 a processor trap or an interrupt.When either occurs, execution is immediately
@@ -961,5 +1042,7 @@ When a process is in kernel mode, it can execute privileged
 instructions and thus gain complete control of the computer system. In contrast,
 when a process executes in user mode, it can invoke only nonprivileged
 instructions.
+
+###### [Table of contents](#table-of-contents)
 
 # Written by ysoh880710
