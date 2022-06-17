@@ -1,4 +1,6 @@
-# How [threads](https://en.wikipedia.org/wiki/Thread_(computing)) works
+# How does a kernel mode [thread](https://en.wikipedia.org/wiki/Thread_(computing)) containing user mode code work
+
+- **I didn't expect the content would become this huge in the beginning.**
 
 - **I will try to minimize the number of topics, or avoid mentioning some related topics if I can explain without them, because more topics make more difficult to understand.**
 
@@ -10,53 +12,58 @@
 
 1. [Operating System](#1-operating-system)  
 1.1. [What is operating system?](#11-what-is-operating-system)  
-1.2. [What is kernel?](#12-what-is-kernel)  
-1.3. [What are the types of operating system?](#13-what-are-the-types-of-operating-system)  
-1.4. [What are the functions of operating system?](#14-what-are-the-functions-of-operating-system)  
-1.5. [Why does the definition, types, and functions of operating system vary?](#15-why-does-the-definition-types-and-functions-of-operating-system-vary)  
-1.6. [What is multi-tasking?](#16-what-is-multi-tasking)  
-2. [Process and thread]()  
-2.1. [What is process?](#25-what-is-process)  
-2.2. [What is thread?](#26-what-is-thread)  
-2.3. [How do process and thread differ?](#27-how-do-process-and-thread-differ)  
-3. [Process Management]()  
-3.1. [What is process management?](#21-what-is-process-management)  
-3.2. [Process scheduling]  
-3.2.1. [What is process scheduling?](#22-what-is-process-scheduling)  
-3.2.2. [What are preemptive and non-preemptive process scheduling?](#23-what-are-preemptive-and-non-preemptive-process-scheduling)  
-3.2.3. [What are the types of process scheduling?](#24-what-are-the-types-of-process-scheduling)  
-3.3. [Thread Scheduling]()  
-3.3.1. [What is thread scheduling?](#28-what-is-thread-scheduling)  
-3.3.2. [What are the types of thread scheduling?]()  
-4. [Hardware]()  
-4.1. [What is computer hardware?]()  
-4.2. [What is processor?]()  
-4.3. [What are the types of processors?]()  
-4.4. [What is CPU?]()  
-4.5. [What is multi-core processor?]()  
-4.6. [What is core?]()  
-4.7. [How do CPU and core differ?]()  
-5. [Instruction]()  
-5.1. [What is instruction?]()  
-5.2. [What is instruction set?]()  
-5.2.1. [What is x86?]()  
-5.2.2. [What is x86-64?]()  
-6. [Protection]()  
-6.1. [What is protection?]()  
-6.2. [Why is protection needed?]()  
-6.3. [What is privilege separation?]()  
-6.4. [What are the examples of privilege separation?]()  
-6.5. [What is protection rings?]()  
-6.6. [How is protection rings carried out?]()  
-6.7. [What is CPU modes?]()  
-6.8. [What are the types of [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?]()  
-6.9. [What are kernel mode and user mode?]()  
-6.10. [What are privileged instructions?]()  
-7. [Context switch]()  
-7.1. [What is time slice?]()  
-7.2. [What is context switch?]()  
-7.3. [What are voluntary context switch and non-voluntary context switch?]()  
-8. [How does a kernel managed thread containing user mode code work?]()  
+1.2. [What are the types of operating system?](#12-what-are-the-types-of-operating-system)  
+1.3. [What are the functions of operating system?](#13-what-are-the-functions-of-operating-system)  
+1.4. [Why does the definition, types, and functions of operating system vary?](#14-why-does-the-definition-types-and-functions-of-operating-system-vary)  
+1.5. [What is multi-tasking?](#15-what-is-multi-tasking)  
+1.6. [What is kernel?](#16-what-is-kernel)  
+2. [Process and Thread](#2-process-and-thread)  
+2.1. [Process](#21-process)  
+2.1.1. [What is process?](#211-what-is-process)  
+2.2. [Thread](#22-thread)  
+2.2.1. [What is thread?](#221-what-is-thread)  
+2.2.2. [What are kernel managed thread and user managed thread?](#222-what-are-kernel-managed-thread-and-user-managed-thread)  
+2.2.3. [What is the mapping of user managed thread to kernel managed thread and why is it needed?](#223-what-is-the-mapping-of-user-managed-thread-to-kernel-managed-thread-and-why-is-it-needed)  
+2.3. [How do process and thread differ?](#23-how-do-process-and-thread-differ)  
+3. [Process Management](#3-process-management)  
+3.1. [What is process management?](#31-what-is-process-management)  
+3.2. [Process Scheduling](#32-process-scheduling)  
+3.2.1. [What is process scheduling?](#321-what-is-process-scheduling)  
+3.2.2. [What are preemptive and non-preemptive process scheduling?](#322-what-are-preemptive-and-non-preemptive-process-scheduling)  
+3.2.3. [What are the types of process scheduling?](#323-what-are-the-types-of-process-scheduling)  
+3.3. [Thread Scheduling](#33-thread-scheduling)  
+3.3.1. [What is thread scheduling?](#331-what-is-thread-scheduling)  
+3.3.2. [What are the types of thread scheduling?](#332-what-are-the-types-of-thread-scheduling)  
+3.4. [How do process scheduling and thread scheduling differ?](#34-how-do-process-scheduling-and-thread-scheduling-differ)  
+4. [Hardware](#4-hardware)  
+4.1. [What is computer hardware?](#41-what-is-computer-hardware)  
+4.2. [What is processor?](#42-what-is-processor)  
+4.3. [What are the types of processors?](#43-what-are-the-types-of-processors)  
+4.4. [What is CPU?](#44-what-is-cpu)  
+4.5. [What is multi-core processor?](#45-what-is-multi-core-processor)  
+4.6. [What is core?](#46-what-is-core)  
+4.7. [How do CPU and core differ?](#47-how-do-cpu-and-core-differ)  
+5. [Instruction](#5-instruction)  
+5.1. [What is instruction?](#51-what-is-instruction)  
+5.2. [What is instruction set?](#52-what-is-instruction-set)  
+5.2.1. [What is x86?](#521-what-is-x86)  
+5.2.2. [What is x86-64?](#522-what-is-x86-64)  
+6. [Protection](#6-protection)  
+6.1. [What is protection?](#61-what-is-protection)  
+6.2. [Why is protection needed?](#62-why-is-protection-needed)  
+6.3. [What is privilege separation?](#63-what-is-privilege-separation)  
+6.4. [What are the examples of privilege separation?](#64-what-are-the-examples-of-privilege-separation)  
+6.5. [What are protection rings?](#65-what-are-protection-rings)  
+6.6. [How are protection rings carried out?](#66-how-are-protection-rings-carried-out)  
+6.7. [What are CPU modes?](#67-what-are-cpu-modes)  
+6.8. [What are the types of CPU modes?](#68-what-are-the-types-of-cpu-modes)  
+6.9. [What are kernel mode and user mode?](#69-what-are-kernel-mode-and-user-mode)  
+6.10. [What are privileged instructions?](#610-what-are-privileged-instructions)  
+7. [Context Switch](#7-context-switch)  
+7.1. [What is time slice?](#71-what-is-time-slice)  
+7.2. [What is context switch?](#72-what-is-context-switch)  
+7.3. [What are voluntary context switch and non-voluntary context switch?](#73-what-are-voluntary-context-switch-and-non-voluntary-context-switch)  
+8. [How does a kernel managed thread containing user mode code work?](#8-how-does-a-kernel-managed-thread-containing-user-mode-code-work)  
 
 # 1. [Operating System](https://en.wikipedia.org/wiki/Operating_system)
 
@@ -89,25 +96,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.2. What is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))?
-
-<p align="center">
-  <img src="https://miro.medium.com/max/1400/1*iuW845pwRhd49KEUYvzsmg.png">
-</p>
-
-- The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a [computer](https://en.wikipedia.org/wiki/Computer)'s [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system.
-
-<details>
-<summary>References</summary>
-
->The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a [computer](https://en.wikipedia.org/wiki/Computer)'s [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system.
-><div align="right">https://en.wikipedia.org/wiki/Kernel_(operating_system)</div>
-
-</details>
-
-###### [Table of contents](#table-of-contents)
-
-## 1.3. What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+## 1.2. What are the types of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
 - **Single-tasking and [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking) (Time-Sharing)**
 - **Single-user and multi-user**
@@ -155,7 +144,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.4. What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
+## 1.3. What are the functions of [operating system](https://en.wikipedia.org/wiki/Operating_system)?
 
 - **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing))**
 - **Memory management**
@@ -207,7 +196,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.5. Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
+## 1.4. Why does the definition, types, and functions of [operating system](https://en.wikipedia.org/wiki/Operating_system) vary?
 
 >In general, we have **no completely adequate definition of an [operating system](https://en.wikipedia.org/wiki/Operating_system)**.
 ><div align="right">5p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
@@ -220,7 +209,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 1.6. What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)?
+## 1.5. What is [multi-tasking](https://en.wikipedia.org/wiki/Computer_multitasking)?
 
 <p align="center">
   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200426073127/Multitasking1-300x300.png">
@@ -246,9 +235,171 @@
 
 ###### [Table of contents](#table-of-contents)
 
-# 2. [Process Management](https://en.wikipedia.org/wiki/Process_management_(computing))
+## 1.6. What is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))?
 
-## 2.1. What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
+<p align="center">
+  <img src="https://miro.medium.com/max/1400/1*iuW845pwRhd49KEUYvzsmg.png">
+</p>
+
+- The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a [computer](https://en.wikipedia.org/wiki/Computer)'s [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system.
+
+<details>
+<summary>References</summary>
+
+>The [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is a computer program at the core of a [computer](https://en.wikipedia.org/wiki/Computer)'s [operating system](https://en.wikipedia.org/wiki/Operating_system) and generally has complete control over everything in the system.
+><div align="right">https://en.wikipedia.org/wiki/Kernel_(operating_system)</div>
+
+</details>
+
+###### [Table of contents](#table-of-contents)
+
+# 2. [Process](https://en.wikipedia.org/wiki/Process_(computing)) and [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
+
+## 2.1. [Process](https://en.wikipedia.org/wiki/Process_(computing))
+
+## 2.1.1. What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
+
+<p align="center">
+  <img src="process.png">
+  <img src="process_state.png">
+</p>
+
+- **[Process](https://en.wikipedia.org/wiki/Process_(computing)) is a program in execution which is fundamentally a container that holds all the information needed to run a program.**
+- **[Process](https://en.wikipedia.org/wiki/Process_(computing)) can be running, blocked, ready, or terminated state.**
+
+<details>
+<summary>References</summary>
+
+>In computing, a [process](https://en.wikipedia.org/wiki/Process_(computing)) is the instance of a [computer](https://en.wikipedia.org/wiki/Computer) program that is being executed by one or many [threads](https://en.wikipedia.org/wiki/Thread_(computing)).
+><div align="right">https://en.wikipedia.org/wiki/Process_(computing)</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a program in execution.
+><div align="right">103p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is the unit of work in most systems.
+><div align="right">103p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is basically a program in execution.
+><div align="right">39p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+>A [process](https://en.wikipedia.org/wiki/Process_(computing)) is fundamentally a container that holds all the information needed to run a program.
+><div align="right">39p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+###### [Table of contents](#table-of-contents)
+
+## 2.2. [Thread](https://en.wikipedia.org/wiki/Thread_(computing))
+
+## 2.2.1. What is [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+
+<p align="center">
+  <img src="process_vs_thread.png">
+</p>
+
+- **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system). It is within a [process](https://en.wikipedia.org/wiki/Process_(computing)), and shares code, data, BSS, and heap section with other [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)).**
+- **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) has running, blocked, ready, or terminated state.**
+
+<details>
+<summary>References</summary>
+
+>In computer science, a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) of execution is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the [operating system](https://en.wikipedia.org/wiki/Operating_system).
+><div align="right">https://en.wikipedia.org/wiki/Thread_(computing)</div>
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a basic unit of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) utilization.
+><div align="right">160p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>It shares with other [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)) its code section, data section, and other [operating-system](https://en.wikipedia.org/wiki/Operating_system) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as open files and signals.
+><div align="right">160p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the basic unit to which the [operating system](https://en.wikipedia.org/wiki/Operating_system) allocates processor time.
+><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads</div>
+
+>A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the entity within a [process](https://en.wikipedia.org/wiki/Process_(computing)) that can be scheduled for execution.
+><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads</div>
+
+>Like a traditional [process](https://en.wikipedia.org/wiki/Process_(computing)) (i.e., a [process](https://en.wikipedia.org/wiki/Process_(computing)) with only one [thread](https://en.wikipedia.org/wiki/Thread_(computing))), a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) can be in any one of several states: running, blocked, ready, or terminated. A running [thread](https://en.wikipedia.org/wiki/Thread_(computing)) currently has the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and is active.
+><div align="right">105p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+>The transitions between [thread](https://en.wikipedia.org/wiki/Thread_(computing)) states are the same as those between [process](https://en.wikipedia.org/wiki/Process_(computing)) states and are illustrated in Fig. 2-2.
+><div align="right">105p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+###### [Table of contents](#table-of-contents)
+
+## 2.2.2. What are [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
+
+<p align="center">
+  <img src="thread_model.png">
+</p>
+
+- **A [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) that the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is aware of and manages. A [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system) during [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
+- **A [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)), also called [Green thread](https://en.wikipedia.org/wiki/Green_threads), is a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) that [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library manages and [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is unaware of. A [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) must be mapped to a [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to be executed.**
+
+<details>
+<summary>References</summary>
+
+>[User](https://en.wikipedia.org/wiki/User_space_and_kernel_space) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are supported above the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) and are managed without [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) support, whereas [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are supported and managed directly by the [operating system](https://en.wikipedia.org/wiki/Operating_system).
+><div align="right">166p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>[User](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are managed by a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library, and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is unaware of them.
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+###### [Table of contents](#table-of-contents)
+
+## 2.2.3. What is the mapping of [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why is it needed?
+
+- **The mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) executing [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
+- **The reason why mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is needed is [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) cannot run on its own. [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) that are being scheduled for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system).**
+- **[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) scheme of [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) is [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope).**
+- **[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) scheme of [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is [system contention scope (SCS)](https://en.wikipedia.org/wiki/System_Contention_Scope).**
+
+<details>
+<summary>References</summary>
+
+>When we say "user-level threads map to kernel threads" we mean that the abstraction of threads presented to user-space is implemented using threads in kernel-space, with each user thread being represented by a kernel-implemented thread.
+><div align="right">https://www.quora.com/What-does-the-statement-user-level-threads-map-to-kernel-threads-mean</div>
+
+>So in a nutshell user threads need to be mapped to kernel threads because it’s the kernel that schedules the thread for execution onto the CPU and for that it must know about the thread that it is scheduling.
+><div align="right">https://www.geeksforgeeks.org/why-must-user-threads-be-mapped-to-a-kernel-thread/</div>
+
+>To run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) must ultimately be mapped to an associated [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))-level [thread](https://en.wikipedia.org/wiki/Thread_(computing)), although this mapping may be indirect and may use a lightweight process (LWP).
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+>the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library schedules [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to run on an available LWP. This scheme is known as [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope), since competition for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) takes place among [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)). (When we say the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library schedules [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) onto available LWPs, we do not mean that the [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are actually running on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) as that further requires the [operating system](https://en.wikipedia.org/wiki/Operating_system) to schedule the LWP’s [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) [thread](https://en.wikipedia.org/wiki/Thread_(computing)) onto a physical [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.) To decide which [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))-level [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to schedule onto a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) uses [system-contention scope (SCS)](https://en.wikipedia.org/wiki/System_Contention_Scope).
+><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
+###### [Table of contents](#table-of-contents)
+
+## 2.3. How do [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
+
+- **A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.**
+- **From memory perspective, [process](https://en.wikipedia.org/wiki/Process_(computing)) includes code, data, BSS, heap, and [threads](https://en.wikipedia.org/wiki/Thread_(computing)), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) includes stack and register.**
+
+<details>
+<summary>References</summary>
+
+>a [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.
+><div align="right">https://en.wikipedia.org/wiki/Thread_(computing)#Processes</div>
+
+>Although a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) must execute in some [process](https://en.wikipedia.org/wiki/Process_(computing)), the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and its [process](https://en.wikipedia.org/wiki/Process_(computing)) are different concepts and can be treated separately.
+><div align="right">103p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+>[Processes](https://en.wikipedia.org/wiki/Process_(computing)) are used to group [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) together; [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are the entities scheduled for execution on the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
+><div align="right">103p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
+
+</details>
+
+###### [Table of contents](#table-of-contents)
+
+# 3. [Process Management](https://en.wikipedia.org/wiki/Process_management_(computing))
+
+## 3.1. What is [process management](https://en.wikipedia.org/wiki/Process_management_(computing))?
 
 - **[Process management](https://en.wikipedia.org/wiki/Process_management_(computing)) is managing [process](https://en.wikipedia.org/wiki/Process_(computing)) creation, deletion, [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler), suspension, resume, synchronization, and communication.**
 
@@ -275,7 +426,9 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 2.2. What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+## 3.2. [Process Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)
+
+## 3.2.1. What is [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://www.tutorialspoint.com/operating_system/images/queuing_diagram.jpg">
@@ -308,7 +461,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 2.3. What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [non-preemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+## 3.2.2. What are [preemptive](https://en.wikipedia.org/wiki/Preemption_(computing)#Preemptive_multitasking) and [non-preemptive](https://en.wikipedia.org/wiki/Cooperative_multitasking) [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://prepinsta.com/wp-content/uploads/2019/03/Preemptive-Scheduling-vs-Non-Preemptive-Scheduling.png">
@@ -339,7 +492,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 2.4. What are the types of [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
+## 3.2.3. What are the types of [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler)?
 
 <p align="center">
   <img src="https://www.guru99.com/images/1/122319_0900_ProcessSche1.png">
@@ -380,97 +533,9 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 2.5. What is [process](https://en.wikipedia.org/wiki/Process_(computing))?
+## 3.3. [Thread](https://en.wikipedia.org/wiki/Thread_(computing)) [Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))
 
-<p align="center">
-  <img src="process.png">
-  <img src="process_state.png">
-</p>
-
-- **[Process](https://en.wikipedia.org/wiki/Process_(computing)) is a program in execution which is fundamentally a container that holds all the information needed to run a program.**
-- **[Process](https://en.wikipedia.org/wiki/Process_(computing)) can be running, blocked, ready, or terminated state.**
-
-<details>
-<summary>References</summary>
-
->In computing, a [process](https://en.wikipedia.org/wiki/Process_(computing)) is the instance of a [computer](https://en.wikipedia.org/wiki/Computer) program that is being executed by one or many [threads](https://en.wikipedia.org/wiki/Thread_(computing)).
-><div align="right">https://en.wikipedia.org/wiki/Process_(computing)</div>
-
->A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a program in execution.
-><div align="right">103p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->A [process](https://en.wikipedia.org/wiki/Process_(computing)) is the unit of work in most systems.
-><div align="right">103p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->A [process](https://en.wikipedia.org/wiki/Process_(computing)) is basically a program in execution.
-><div align="right">39p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
-
->A [process](https://en.wikipedia.org/wiki/Process_(computing)) is fundamentally a container that holds all the information needed to run a program.
-><div align="right">39p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
-
-</details>
-
-###### [Table of contents](#table-of-contents)
-
-## 2.6. What is [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
-
-<p align="center">
-  <img src="process_vs_thread.png">
-</p>
-
-- **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system). It is within a [process](https://en.wikipedia.org/wiki/Process_(computing)), and shares code, data, BSS, and heap section with other [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)).**
-- **[Thread](https://en.wikipedia.org/wiki/Thread_(computing)) has running, blocked, ready, or terminated state.**
-
-<details>
-<summary>References</summary>
-
->In computer science, a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) of execution is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the [operating system](https://en.wikipedia.org/wiki/Operating_system).
-><div align="right">https://en.wikipedia.org/wiki/Thread_(computing)</div>
-
->A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a basic unit of [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) utilization.
-><div align="right">160p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->It shares with other [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)) its code section, data section, and other [operating-system](https://en.wikipedia.org/wiki/Operating_system) [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), such as open files and signals.
-><div align="right">160p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the basic unit to which the [operating system](https://en.wikipedia.org/wiki/Operating_system) allocates processor time.
-><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads</div>
-
->A [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the entity within a [process](https://en.wikipedia.org/wiki/Process_(computing)) that can be scheduled for execution.
-><div align="right">https://docs.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads</div>
-
->Like a traditional [process](https://en.wikipedia.org/wiki/Process_(computing)) (i.e., a [process](https://en.wikipedia.org/wiki/Process_(computing)) with only one [thread](https://en.wikipedia.org/wiki/Thread_(computing))), a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) can be in any one of several states: running, blocked, ready, or terminated. A running [thread](https://en.wikipedia.org/wiki/Thread_(computing)) currently has the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) and is active.
-><div align="right">105p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
-
->The transitions between [thread](https://en.wikipedia.org/wiki/Thread_(computing)) states are the same as those between [process](https://en.wikipedia.org/wiki/Process_(computing)) states and are illustrated in Fig. 2-2.
-><div align="right">105p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
-
-</details>
-
-###### [Table of contents](#table-of-contents)
-
-## 2.7. How do [process](https://en.wikipedia.org/wiki/Process_(computing)) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) differ?
-
-- **A [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.**
-- **From memory perspective, [process](https://en.wikipedia.org/wiki/Process_(computing)) includes code, data, BSS, heap, and [threads](https://en.wikipedia.org/wiki/Thread_(computing)), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) includes stack and register.**
-
-<details>
-<summary>References</summary>
-
->a [process](https://en.wikipedia.org/wiki/Process_(computing)) is a unit of [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources), while a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a unit of [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) and execution.
-><div align="right">https://en.wikipedia.org/wiki/Thread_(computing)#Processes</div>
-
->Although a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) must execute in some [process](https://en.wikipedia.org/wiki/Process_(computing)), the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and its [process](https://en.wikipedia.org/wiki/Process_(computing)) are different concepts and can be treated separately.
-><div align="right">103p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
-
->[Processes](https://en.wikipedia.org/wiki/Process_(computing)) are used to group [resources](https://en.wikipedia.org/wiki/Resource#Computer_resources) together; [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are the entities scheduled for execution on the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
-><div align="right">103p, Modern Operating Systems 4th edition, Andrew S. Tanenbaum</div>
-
-</details>
-
-###### [Table of contents](#table-of-contents)
-
-## 2.8. What is [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
+## 3.3.1. What is [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
 
 |<div align="center">![thread_scheduling](thread_scheduling.png)</div>|<div align="center">![Scheduling](http://beyondthegeek.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-29-at-12.39.17-AM-500x484.png)</div>|
 |---|---|
@@ -490,7 +555,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 2.9. What are the types of [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
+## 3.3.2. What are the types of [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing))?
 
 - **Selecting an available [thread](https://en.wikipedia.org/wiki/Process_(computing)) and putting it into a [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready). This is also called [long-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Long-term_scheduling) or admission [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
 - **Selecting a [thread](https://en.wikipedia.org/wiki/Process_(computing)) in a ready queue and allocate a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core. This is also called [short-term scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Short-term_scheduling) or [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)). Also, this [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) involves [context switch](https://en.wikipedia.org/wiki/Context_switch).**
@@ -498,7 +563,7 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 2.10. How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) differ?
+## 3.4. How do [process scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)#Process_scheduler) and [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) differ?
 
 <p align="center">
   <img src="process_scheduling_vs_thread_scheduling.png">
@@ -530,61 +595,6 @@
 ><div align="right">https://www.microsoftpressstore.com/articles/article.aspx?p=2233328&seqNum=7</div>
 
 </details>
-
-###### [Table of contents](#table-of-contents)
-
-## 2.11. What are [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing))?
-
-<p align="center">
-  <img src="thread_model.png">
-</p>
-
-- **A [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) that the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is aware of and manages. A [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is the unit that is being scheduled on [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system) during [thread](https://en.wikipedia.org/wiki/Thread_(computing)) [scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)).**
-- **A [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)), also called [Green thread](https://en.wikipedia.org/wiki/Green_threads), is a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) that [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library manages and [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is unaware of. A [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) must be mapped to a [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to be executed.**
-
-<details>
-<summary>References</summary>
-
->[User](https://en.wikipedia.org/wiki/User_space_and_kernel_space) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are supported above the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) and are managed without [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) support, whereas [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are supported and managed directly by the [operating system](https://en.wikipedia.org/wiki/Operating_system).
-><div align="right">166p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->[User](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are managed by a [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library, and the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) is unaware of them.
-><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
-</details>
-
-###### [Table of contents](#table-of-contents)
-
-## 2.12. What is the mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and why is it needed?
-
-- **The mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) executing [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)).**
-- **The reason why mapping [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) is needed is [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) cannot run on its own. [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) executes [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) that are being scheduled for execution by [operating system](https://en.wikipedia.org/wiki/Operating_system).**
-- **[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) scheme of [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) is [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope).**
-- **[Scheduling](https://en.wikipedia.org/wiki/Scheduling_(computing)) scheme of [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) is [system contention scope (SCS)](https://en.wikipedia.org/wiki/System_Contention_Scope).**
-
-<details>
-<summary>References</summary>
-
->When we say "user-level threads map to kernel threads" we mean that the abstraction of threads presented to user-space is implemented using threads in kernel-space, with each user thread being represented by a kernel-implemented thread.
-><div align="right">https://www.quora.com/What-does-the-statement-user-level-threads-map-to-kernel-threads-mean</div>
-
->So in a nutshell user threads need to be mapped to kernel threads because it’s the kernel that schedules the thread for execution onto the CPU and for that it must know about the thread that it is scheduling.
-><div align="right">https://www.geeksforgeeks.org/why-must-user-threads-be-mapped-to-a-kernel-thread/</div>
-
->To run on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) must ultimately be mapped to an associated [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))-level [thread](https://en.wikipedia.org/wiki/Thread_(computing)), although this mapping may be indirect and may use a lightweight process (LWP).
-><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
->the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library schedules [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space)-level [threads](https://en.wikipedia.org/wiki/Thread_(computing)) to run on an available LWP. This scheme is known as [process contention scope (PCS)](https://en.wikipedia.org/wiki/Process_Contention_Scope), since competition for the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) takes place among [threads](https://en.wikipedia.org/wiki/Thread_(computing)) belonging to the same [process](https://en.wikipedia.org/wiki/Process_(computing)). (When we say the [thread](https://en.wikipedia.org/wiki/Thread_(computing)) library schedules [user](https://en.wikipedia.org/wiki/User_space_and_kernel_space) [threads](https://en.wikipedia.org/wiki/Thread_(computing)) onto available LWPs, we do not mean that the [threads](https://en.wikipedia.org/wiki/Thread_(computing)) are actually running on a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) as that further requires the [operating system](https://en.wikipedia.org/wiki/Operating_system) to schedule the LWP’s [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) [thread](https://en.wikipedia.org/wiki/Thread_(computing)) onto a physical [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core.) To decide which [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system))-level [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to schedule onto a [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), the [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) uses [system-contention scope (SCS)](https://en.wikipedia.org/wiki/System_Contention_Scope).
-><div align="right">217p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
-
-</details>
-
-CPU - The hardware that executes instructions.
-Processor - Aphysical chip that contains one or more CPUs.
-Core - The basic computation unit of the CPU.
-Multicore - Including multiple computing cores on the same CPU.
-Multiprocessor - Including multiple processors.
-<div align="right">18p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
 ###### [Table of contents](#table-of-contents)
 
@@ -736,7 +746,7 @@ Multiprocessor - Including multiple processors.
 
 ###### [Table of contents](#table-of-contents)
 
-# 5. [Instruction]()
+# 5. [Instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))
 
 ## 5.1. What is [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science))?
 
@@ -866,13 +876,13 @@ Multiprocessor - Including multiple processors.
 
 ###### [Table of contents](#table-of-contents)
 
-## 6.5. What is [protection rings](https://en.wikipedia.org/wiki/Protection_ring)?
+## 6.5. What are [protection rings](https://en.wikipedia.org/wiki/Protection_ring)?
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Priv_rings.svg">
 </p>
 
-- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) is a model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) which [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) being separated to rings, which the innermost ring (ring 0) has the full set of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) and each outer ring has a subset of functionality of its inner ring.
+- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) are a model of [privilege separation](https://en.wikipedia.org/wiki/Privilege_separation) which [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) being separated to rings, which the innermost ring (ring 0) has the full set of [privileges](https://en.wikipedia.org/wiki/Privilege_(computing)) and each outer ring has a subset of functionality of its inner ring.
 
 <details>
 <summary>References</summary>
@@ -890,9 +900,9 @@ Multiprocessor - Including multiple processors.
 
 ###### [Table of contents](#table-of-contents)
 
-## 6.6. How is [protection rings](https://en.wikipedia.org/wiki/Protection_ring) carried out?
+## 6.6. How are [protection rings](https://en.wikipedia.org/wiki/Protection_ring) carried out?
 
-- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) is generally carried out by [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) provided by [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) at the [hardware](https://en.wikipedia.org/wiki/Computer_hardware) level.
+- [Protection rings](https://en.wikipedia.org/wiki/Protection_ring) are generally carried out by [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) provided by [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) at the [hardware](https://en.wikipedia.org/wiki/Computer_hardware) level.
 
 <details>
 <summary>References</summary>
@@ -910,7 +920,7 @@ Multiprocessor - Including multiple processors.
 
 ###### [Table of contents](#table-of-contents)
 
-## 6.7. What is [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
+## 6.7. What are [CPU modes](https://en.wikipedia.org/wiki/CPU_modes)?
 
 - [CPU modes](https://en.wikipedia.org/wiki/CPU_modes) are operating modes of some [CPUs](https://en.wikipedia.org/wiki/Central_processing_unit) that place restrictions on the type and scope of operations that can be performed by certain [processes](https://en.wikipedia.org/wiki/Process_(computing)) being run by the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit).
 - Kernel mode is
@@ -973,7 +983,7 @@ Multiprocessor - Including multiple processors.
 
 ###### [Table of contents](#table-of-contents)
 
-# 7. [Context Switch]()
+# 7. [Context Switch](https://en.wikipedia.org/wiki/Context_switch)
 
 ## 7.1. What is [time slice](https://en.wikipedia.org/wiki/Preemption_(computing)#Time_slice)?
 
