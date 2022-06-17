@@ -1,4 +1,4 @@
-# How does a kernel mode [thread](https://en.wikipedia.org/wiki/Thread_(computing)) containing user mode code work
+# How does a [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) containing user mode [code](https://en.wikipedia.org/wiki/Source_code) work
 
 - **I didn't expect the content would become this huge in the beginning.**
 
@@ -59,6 +59,7 @@
 6.8. [What are the types of CPU modes?](#68-what-are-the-types-of-cpu-modes)  
 6.9. [What are kernel mode and user mode?](#69-what-are-kernel-mode-and-user-mode)  
 6.10. [What are privileged instructions?](#610-what-are-privileged-instructions)  
+6.11. [How can CPU mode switch, or privilege level switch of protection rings, be done?](#611-how-can-cpu-mode-switch-or-privilege-level-switch-of-protection-rings-be-done)  
 7. [Context Switch](#7-context-switch)  
 7.1. [What is time slice?](#71-what-is-time-slice)  
 7.2. [What is context switch?](#72-what-is-context-switch)  
@@ -981,6 +982,18 @@
 
 </details>
 
+## 6.11. How can [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) switch, or [privilege](https://en.wikipedia.org/wiki/Privilege_(computing)) level switch of [protection rings](https://en.wikipedia.org/wiki/Protection_ring), be done?
+
+- [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) switch, or [privilege](https://en.wikipedia.org/wiki/Privilege_(computing)) level switch of [protection rings](https://en.wikipedia.org/wiki/Protection_ring), can be done by executing special [instructions](https://simple.wikipedia.org/wiki/Instruction_(computer_science)), for example, [SYSCALL](https://www.felixcloutier.com/x86/syscall.html) and [SYSRET](https://www.felixcloutier.com/x86/sysret) in [Intel](https://en.wikipedia.org/wiki/Intel).
+
+<details>
+<summary>References</summary>
+
+>When the [system](https://en.wikipedia.org/wiki/System) boots, it boots to the highest [privilege](https://en.wikipedia.org/wiki/Privilege_(computing)) level. [Code](https://en.wikipedia.org/wiki/Source_code) at that level performs necessary initialization before dropping to a less [privileged](https://en.wikipedia.org/wiki/Privilege_(computing)) level. In order to return to a higher [privilege](https://en.wikipedia.org/wiki/Privilege_(computing)) level, [code](https://en.wikipedia.org/wiki/Source_code) usually calls a special instruction, sometimes referred to as a gate, which provides a portal between rings. The syscall [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) (in [Intel](https://en.wikipedia.org/wiki/Intel)) is one example. Calling this [instruction](https://simple.wikipedia.org/wiki/Instruction_(computer_science)) shifts execution from user to kernel mode.
+><div align="right">669p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
+</details>
+
 ###### [Table of contents](#table-of-contents)
 
 # 7. [Context Switch](https://en.wikipedia.org/wiki/Context_switch)
@@ -1028,6 +1041,9 @@
 >Switching the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) core to another [process](https://en.wikipedia.org/wiki/Process_(computing)) requires performing a state save of the current [process](https://en.wikipedia.org/wiki/Process_(computing)) and a state restore of a different [process](https://en.wikipedia.org/wiki/Process_(computing)). This task is known as a [context switch](https://en.wikipedia.org/wiki/Context_switch).
 ><div align="right">114p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
 
+>context switch : The switching of the [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) from one [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) to another; requires performing a state save of the current [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) and a state restore of the other.
+><div align="right">G-7p, Operating System Concepts 10th edition, Abraham Silberschatz</div>
+
 </details>
 
 ###### [Table of contents](#table-of-contents)
@@ -1047,13 +1063,21 @@
 
 ###### [Table of contents](#table-of-contents)
 
-## 8. How does a kernel managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) containing user mode code work?
+## 8. How does a [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system)) managed [thread](https://en.wikipedia.org/wiki/Thread_(computing)) containing user mode [code](https://en.wikipedia.org/wiki/Source_code) work?
+
+- A sequence of the case which time slice expires is as follows.
+
+1. [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) switches from user mode to kernel mode.
+2. Select a [process](https://en.wikipedia.org/wiki/Process_(computing)) or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) from [ready queue](https://en.wikipedia.org/wiki/Process_state#Ready).
+3. Stores the current [process](https://en.wikipedia.org/wiki/Process_(computing)) context or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) context.
+4. Restores the [process](https://en.wikipedia.org/wiki/Process_(computing)) context or [thread](https://en.wikipedia.org/wiki/Thread_(computing)) context to execute.
+5. [CPU mode](https://en.wikipedia.org/wiki/CPU_modes) switches from kernel mode to user mode.
+6. Execute user mode [code](https://en.wikipedia.org/wiki/Source_code).
+7. 
 
 Anotherway of ending up in a more privileged ring is on the occurrence of
 a processor trap or an interrupt.When either occurs, execution is immediately
 transferred into the higher-privilege ring.
-
-Many modern [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) architectures (including the popular Intel x86 architecture) include some form of ring protection, although the [Windows NT](https://en.wikipedia.org/wiki/Windows_NT) [operating system](https://en.wikipedia.org/wiki/Operating_system), like Unix, does not fully utilize this feature. OS/2 does to some extent, using three rings: ring 0 for kernel code and device drivers, ring 2 for privileged code (user programs with I/O access permissions), and ring 3 for unprivileged code (nearly all user programs). ([Protection ring, wikipedia](https://en.wikipedia.org/wiki/Protection_ring))
 
 **[Context switches](https://en.wikipedia.org/wiki/Context_switch) can occur only in [kernel mode](https://en.wikipedia.org/wiki/CPU_modes)**. ([Context Switch Definition, linfo](http://www.linfo.org/context_switch.html))
 
